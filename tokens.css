@@ -1,0 +1,56 @@
+/* =====================
+   DESIGN TOKENS — jmb-portfolio
+   ===================== */
+:root {
+  /* Surface */
+  --c-page:          oklch(97.5% 0.006 90);
+  --c-subtle:        oklch(93.5% 0.007 90);
+  --c-elevated:      oklch(99%   0.003 90);
+  --c-border:        oklch(87%   0.008 90);
+  --c-border-strong: oklch(72%   0.010 90);
+
+  /* Text — light surfaces */
+  --c-text-1:  oklch(17%  0.008 90);
+  --c-text-2:  oklch(40%  0.010 90);
+  --c-text-3:  oklch(58%  0.008 90);
+  --c-text-ph: oklch(72%  0.006 90);
+  --c-text-inv: oklch(95%  0.018 90);
+
+  /* Text — dark green surfaces (--c-green-900 / --c-green-950) */
+  --c-text-inv-2: oklch(95% 0.018 90 / 0.65);
+  --c-text-inv-3: oklch(95% 0.018 90 / 0.5);
+
+  /* Green scale */
+  --c-green-950: oklch(19% 0.09  142);
+  --c-green-900: oklch(24% 0.11  142);
+  --c-green-700: oklch(33% 0.13  142);
+  --c-green-600: oklch(39% 0.13  142);
+  --c-green-400: oklch(55% 0.14  142);
+  --c-green-200: oklch(76% 0.11  142);
+  --c-green-100: oklch(90% 0.055 142);
+  --c-green-50:  oklch(96% 0.025 142);
+
+  /* Semantic */
+  --c-action:        var(--c-green-700);
+  --c-action-hover:  var(--c-green-600);
+  --c-on-action:     oklch(98% 0.010 90);
+  --c-focus:         oklch(53% 0.22  255);
+  --c-error:         oklch(47% 0.19   25);
+
+  /* Typography */
+  --font-sans:  'Bricolage Grotesque', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+
+  /* Spacing scale */
+  --sp-1:  0.25rem; --sp-2:  0.5rem;  --sp-3:  0.75rem;
+  --sp-4:  1rem;    --sp-5:  1.25rem; --sp-6:  1.5rem;
+  --sp-8:  2rem;    --sp-10: 2.5rem;  --sp-12: 3rem;
+  --sp-16: 4rem;    --sp-20: 5rem;    --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* Layout */
+  --max-w:  1200px;
+  --touch:  44px;
+  --nav-h:  64px;
+  --ease:   cubic-bezier(0.22, 1, 0.36, 1);
+}
