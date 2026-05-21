@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>José Maria Barros — UX & Product Designer</title>
+  <meta name="description" content="Principal UX & Product Designer. Design Systems acessíveis, WCAG 2.2, EAA 2025. Lisboa, Portugal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Serif+4:ital,opsz,wght@1,8..60,200..900&display=swap" rel="stylesheet" />
+  <style>
+    /* =====================
+       RESET
+       ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-optical-sizing: auto;
+      background: oklch(97.5% 0.006 90);
+      color: oklch(17% 0.008 90);
+      font-size: 1rem;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* =====================
+       DESIGN TOKENS
+       ===================== */
+    :root {
+      --c-page:          oklch(97.5% 0.006 90);
+      --c-subtle:        oklch(93.5% 0.007 90);
+      --c-elevated:      oklch(99%   0.003 90);
+      --c-border:        oklch(87%   0.008 90);
+      --c-border-strong: oklch(72%   0.010 90);
+
+      --c-text-1:  oklch(17%  0.008 90);
+      --c-text-2:  oklch(40%  0.010 90);
+      --c-text-3:  oklch(58%  0.008 90);
+      --c-text-ph: oklch(72%  0.006 90);
+      --c-text-inv:oklch(95%  0.018 90);
+
+      --c-green-950: oklch(19% 0.09  142);
+      --c-green-900: oklch(24% 0.11  142);
+      --c-green-700: oklch(33% 0.13  142);
+      --c-green-600: oklch(39% 0.13  142);
+      --c-green-400: oklch(55% 0.14  142);
+      --c-green-200: oklch(76% 0.11  142);
+      --c-green-100: oklch(90% 0.055 142);
+      --c-green-50:  oklch(96% 0.025 142);
+
+      --c-action:        var(--c-green-700);
+      --c-action-hover:  var(--c-green-600);
+      --c-on-action:     oklch(98% 0.010 90);
+      --c-focus:         oklch(53% 0.22  255);
+      --c-error:         oklch(47% 0.19   25);
+
+      --font-sans:  'Bricolage Grotesque', system-ui, sans-serif;
+      --font-serif: 'Source Serif 4', Georgia, serif;
+
+      --sp-1:  0.25rem; --sp-2:  0.5rem;  --sp-3:  0.75rem;
+      --sp-4:  1rem;    --sp-5:  1.25rem; --sp-6:  1.5rem;
+      --sp-8:  2rem;    --sp-10: 2.5rem;  --sp-12: 3rem;
+      --sp-16: 4rem;    --sp-20: 5rem;    --sp-24: 6rem;
+      --sp-32: 8rem;
+
+      --max-w:  1200px;
+      --touch:  44px;
+      --nav-h:  64px;
+      --ease:   cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* =====================
+       ACCESSIBILITY
+       ===================== */
+    .skip-link {
+      position: absolute; top: -100%; left: var(--sp-4);
+      background: var(--c-focus); color: oklch(99% 0.003 90);
+      padding: var(--sp-3) var(--sp-4);
+      font-size: 0.8125rem; font-weight: 500;
+      text-decoration: none; z-index: 10000;
+      border-radius: 0 0 3px 3px;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--c-focus); outline-offset: 3px; }
+    :focus:not(:focus-visible) { outline: none; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    /* =====================
+       NAVIGATION
+       ===================== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      padding: 0 var(--sp-8);
+      display: flex; justify-content: space-between; align-items: center;
+      background: oklch(97.5% 0.006 90 / 0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .nav-logo {
+      font-family: var(--font-sans);
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--c-text-1); text-decoration: none;
+    }
+    .nav-logo-dot { color: var(--c-action); }
+    .nav-links { display: flex; gap: var(--sp-8); list-style: none; }
+    .nav-links a {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-text-3); text-decoration: none;
+      transition: color 0.2s var(--ease);
+    }
+    .nav-links a:hover { color: var(--c-text-1); }
+    .nav-burger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: var(--sp-2); color: var(--c-text-1);
+      min-height: var(--touch); min-width: var(--touch);
+      align-items: center; justify-content: center;
+    }
+
+    /* =====================
+       BUTTONS
+       ===================== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: var(--sp-2);
+      min-height: var(--touch);
+      padding: 0 var(--sp-6);
+      font-family: var(--font-sans);
+      font-size: 0.8125rem; font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none; border-radius: 2px;
+      border: 1.5px solid transparent; cursor: pointer;
+      transition: background 0.2s var(--ease), color 0.2s var(--ease),
+                  border-color 0.2s var(--ease), transform 0.15s var(--ease);
+      white-space: nowrap;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary {
+      background: var(--c-action); color: var(--c-on-action);
+      border-color: var(--c-action);
+    }
+    .btn-primary:hover {
+      background: var(--c-action-hover); border-color: var(--c-action-hover);
+    }
+    .btn-ghost {
+      background: transparent; color: var(--c-text-2);
+      border-color: var(--c-border-strong);
+    }
+    .btn-ghost:hover { color: var(--c-text-1); border-color: var(--c-text-2); }
+    .btn-inv {
+      background: transparent; color: var(--c-text-inv);
+      border-color: oklch(95% 0.018 90 / 0.3);
+    }
+    .btn-inv:hover { border-color: var(--c-text-inv); }
+
+    /* =====================
+       HERO
+       ===================== */
+    .hero {
+      min-height: 100svh;
+      padding: calc(var(--nav-h) + var(--sp-16)) var(--sp-8) var(--sp-20);
+      max-width: var(--max-w); margin: 0 auto;
+      display: flex; flex-direction: column;
+    }
+    .hero-eyebrow {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--c-action);
+      margin-bottom: var(--sp-8);
+      opacity: 0;
+      animation: slideUp 0.8s var(--ease) 0.1s forwards;
+    }
+    .hero-title {
+      font-size: clamp(3.25rem, 9.5vw, 8.5rem);
+      font-weight: 800;
+      line-height: 0.93;
+      letter-spacing: -0.03em;
+      color: var(--c-text-1);
+      flex: 1;
+      align-self: flex-start;
+      padding-bottom: var(--sp-16);
+      opacity: 0;
+      animation: slideUp 0.8s var(--ease) 0.2s forwards;
+    }
+    .hero-em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--c-action);
+    }
+    .hero-base {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--sp-8);
+      align-items: end;
+      opacity: 0;
+      animation: slideUp 0.8s var(--ease) 0.4s forwards;
+    }
+    .hero-desc {
+      font-size: 1.0625rem; font-weight: 300;
+      line-height: 1.7; color: var(--c-text-2);
+      max-width: 52ch;
+    }
+    .hero-ctas { display: flex; gap: var(--sp-3); flex-shrink: 0; }
+
+    /* =====================
+       SHARED SECTION ELEMENTS
+       ===================== */
+    .section-label {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--c-action); margin-bottom: var(--sp-4);
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -0.025em; color: var(--c-text-1);
+      margin-bottom: var(--sp-12);
+    }
+    .tag {
+      font-size: 0.6875rem; font-weight: 500;
+      padding: 3px var(--sp-3); border-radius: 2px;
+      border: 1px solid var(--c-border);
+      color: var(--c-text-3);
+      display: inline-block;
+    }
+
+    /* =====================
+       ABOUT
+       ===================== */
+    .about { background: var(--c-subtle); padding: var(--sp-32) var(--sp-8); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: var(--sp-20); align-items: start;
+      max-width: var(--max-w); margin: 0 auto;
+    }
+    .about-portrait-wrap {
+      position: sticky; top: calc(var(--nav-h) + var(--sp-8));
+    }
+    .about-portrait {
+      aspect-ratio: 4/5; background: var(--c-elevated);
+      border: 1px solid var(--c-border); border-radius: 3px;
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+    }
+    .portrait-initials {
+      font-family: var(--font-sans); font-weight: 800;
+      font-size: 5rem; letter-spacing: -0.04em;
+      color: var(--c-green-100);
+    }
+    .about-location {
+      margin-top: var(--sp-3);
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-text-3);
+    }
+    .about-text p {
+      font-size: 1.0625rem; font-weight: 300;
+      line-height: 1.7; color: var(--c-text-2);
+      margin-bottom: var(--sp-5); max-width: 65ch;
+    }
+    .about-text p strong { color: var(--c-text-1); font-weight: 600; }
+    .about-quote {
+      padding: var(--sp-8) 0; margin: var(--sp-4) 0;
+    }
+    .about-quote::before {
+      content: '\201C';
+      display: block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 5rem; line-height: 0.7;
+      color: var(--c-action); opacity: 0.6;
+      margin-bottom: var(--sp-3);
+    }
+    .about-quote p {
+      font-family: var(--font-serif);
+      font-style: italic; font-weight: 300;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      color: var(--c-text-1);
+      line-height: 1.5;
+      max-width: 52ch;
+    }
+    .skills-list {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0 var(--sp-8); list-style: none; margin-top: var(--sp-6);
+    }
+    .skills-list li {
+      font-size: 0.875rem; font-weight: 400;
+      color: var(--c-text-2); padding: var(--sp-2) 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    /* =====================
+       SERVICES
+       ===================== */
+    .services { background: var(--c-page); padding: var(--sp-32) var(--sp-8); }
+    .services-inner { max-width: var(--max-w); margin: 0 auto; }
+    .services-list { list-style: none; border-top: 1px solid var(--c-border); }
+    .service-row {
+      display: grid;
+      grid-template-columns: 3rem 1fr 200px;
+      gap: var(--sp-8);
+      padding: var(--sp-8) 0;
+      border-bottom: 1px solid var(--c-border);
+      align-items: start;
+    }
+    .service-num {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.08em; color: var(--c-text-3);
+      padding-top: 0.45em;
+    }
+    .service-title {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--c-text-1); margin-bottom: var(--sp-3);
+    }
+    .service-desc {
+      font-size: 0.9375rem; font-weight: 300;
+      line-height: 1.65; color: var(--c-text-2); max-width: 54ch;
+    }
+    .service-tags {
+      display: flex; flex-wrap: wrap; gap: var(--sp-2);
+      justify-content: flex-end; padding-top: 0.45em;
+    }
+
+    /* =====================
+       WORK
+       ===================== */
+    .work { background: var(--c-green-900); padding: var(--sp-32) var(--sp-8); }
+    .work-inner { max-width: var(--max-w); margin: 0 auto; }
+    .work-label {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--c-green-200); margin-bottom: var(--sp-4);
+    }
+    .work-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--c-text-inv); margin-bottom: var(--sp-12);
+    }
+    .work-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: oklch(95% 0.018 90 / 0.07);
+    }
+    .work-card {
+      background: oklch(95% 0.018 90 / 0.03);
+      padding: var(--sp-6); text-decoration: none;
+      display: block; color: inherit;
+      transition: background 0.2s var(--ease);
+    }
+    .work-card:hover { background: oklch(95% 0.018 90 / 0.07); }
+    .work-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      background: oklch(95% 0.018 90 / 0.04);
+      border-radius: 2px; margin-bottom: var(--sp-5);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-style: italic;
+      font-size: 1.4rem; color: oklch(95% 0.018 90 / 0.10);
+    }
+    .work-industry {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--c-green-200); margin-bottom: var(--sp-2);
+    }
+    .work-card-title {
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--c-text-inv); margin-bottom: var(--sp-3);
+    }
+    .work-card-desc {
+      font-size: 0.9rem; font-weight: 300;
+      color: oklch(95% 0.018 90 / 0.5); line-height: 1.65;
+    }
+    .work-card-meta { margin-top: var(--sp-4); }
+    .work-card .tag {
+      background: oklch(95% 0.018 90 / 0.05);
+      border-color: oklch(95% 0.018 90 / 0.12);
+      color: oklch(95% 0.018 90 / 0.5);
+      margin-right: var(--sp-2); margin-bottom: var(--sp-2);
+    }
+    .work-card-hint {
+      display: block; margin-top: var(--sp-4);
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em;
+      color: var(--c-green-200);
+      opacity: 0; transition: opacity 0.2s var(--ease);
+    }
+    .work-card:hover .work-card-hint { opacity: 1; }
+
+    /* =====================
+       PROCESS
+       ===================== */
+    .process { background: var(--c-subtle); padding: var(--sp-32) var(--sp-8); }
+    .process-inner { max-width: var(--max-w); margin: 0 auto; }
+    .process-list {
+      list-style: none;
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--c-border);
+    }
+    .process-entry {
+      padding: var(--sp-10) var(--sp-10) var(--sp-10) 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .process-entry:nth-child(even) {
+      padding-left: var(--sp-10); padding-right: 0;
+      border-left: 1px solid var(--c-border);
+    }
+    .process-n {
+      display: block;
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.1em; color: var(--c-text-3);
+      margin-bottom: var(--sp-5);
+    }
+    .process-entry-title {
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--c-text-1); margin-bottom: var(--sp-3);
+    }
+    .process-entry-desc {
+      font-size: 0.9375rem; font-weight: 300;
+      line-height: 1.65; color: var(--c-text-2);
+    }
+
+    /* =====================
+       CONTACT
+       ===================== */
+    .contact { background: var(--c-green-950); padding: var(--sp-32) var(--sp-8); }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: var(--sp-20); max-width: var(--max-w);
+      margin: 0 auto; align-items: start;
+    }
+    .contact-label {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--c-green-200); margin-bottom: var(--sp-4);
+    }
+    .contact-heading {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--c-text-inv); margin-bottom: var(--sp-8);
+    }
+    .contact-desc {
+      font-size: 1.0625rem; font-weight: 300;
+      line-height: 1.7; color: oklch(95% 0.018 90 / 0.5);
+      max-width: 46ch; margin-bottom: var(--sp-8);
+    }
+    .contact-links { display: flex; flex-direction: column; gap: var(--sp-1); }
+    .contact-link {
+      display: flex; align-items: center; gap: var(--sp-4);
+      font-size: 0.9375rem; font-weight: 300;
+      color: oklch(95% 0.018 90 / 0.55); text-decoration: none;
+      min-height: var(--touch);
+      transition: color 0.2s var(--ease);
+    }
+    .contact-link:hover { color: var(--c-text-inv); }
+    .contact-link-icon {
+      width: 32px; height: 32px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; color: var(--c-green-200);
+      font-style: normal;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: var(--sp-4); }
+    .form-group { display: flex; flex-direction: column; gap: var(--sp-2); }
+    .form-label {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: oklch(95% 0.018 90 / 0.4);
+    }
+    .form-label .req { color: var(--c-green-200); margin-left: 2px; }
+    .form-input {
+      padding: var(--sp-3) var(--sp-4);
+      font-family: var(--font-sans); font-size: 0.9375rem;
+      background: oklch(95% 0.018 90 / 0.05);
+      border: 1px solid oklch(95% 0.018 90 / 0.15);
+      border-radius: 2px; color: var(--c-text-inv);
+      outline: none; width: 100%; min-height: var(--touch);
+      transition: border-color 0.2s var(--ease);
+    }
+    .form-input:focus { border-color: var(--c-green-200); }
+    .form-input::placeholder { color: oklch(95% 0.018 90 / 0.25); }
+    .form-input[aria-invalid="true"] { border-color: oklch(65% 0.15 25); }
+    textarea.form-input { resize: vertical; min-height: 130px; }
+    .form-hint { font-size: 0.6875rem; color: oklch(95% 0.018 90 / 0.3); }
+
+    /* =====================
+       FOOTER
+       ===================== */
+    footer {
+      background: var(--c-green-950);
+      border-top: 1px solid oklch(95% 0.018 90 / 0.08);
+      color: oklch(95% 0.018 90 / 0.3);
+      padding: var(--sp-8); text-align: center;
+      font-size: 0.8125rem; font-weight: 300;
+    }
+    footer a { color: var(--c-green-200); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* =====================
+       REVEAL
+       ===================== */
+    .reveal {
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
+    /* =====================
+       RESPONSIVE — 900px
+       ===================== */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: var(--sp-8); }
+      .about-portrait-wrap { position: static; max-width: 260px; }
+      .service-row { grid-template-columns: 2.5rem 1fr; }
+      .service-tags { display: none; }
+      .work-grid { grid-template-columns: 1fr; gap: 1px; }
+      .contact-inner { grid-template-columns: 1fr; gap: var(--sp-12); }
+      .process-list { grid-template-columns: 1fr; }
+      .process-entry:nth-child(even) { padding-left: 0; border-left: none; }
+      .hero-base { grid-template-columns: 1fr; gap: var(--sp-6); }
+    }
+
+    /* =====================
+       RESPONSIVE — 600px
+       ===================== */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: oklch(97.5% 0.006 90 / 0.98);
+        border-bottom: 1px solid var(--c-border);
+        padding: var(--sp-4) var(--sp-8); gap: var(--sp-4);
+      }
+      .nav-burger { display: flex; }
+      .hero { padding: calc(var(--nav-h) + var(--sp-8)) var(--sp-4) var(--sp-12); }
+      .about,
+      .services,
+      .work,
+      .process,
+      .contact { padding: var(--sp-16) var(--sp-4); }
+      .service-row { grid-template-columns: 2.5rem 1fr; }
+      .hero-ctas { flex-wrap: wrap; }
+      .skills-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="#" class="nav-logo" aria-label="José Maria Barros — início">
+      José Maria Barros<span class="nav-logo-dot" aria-hidden="true">.</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#trabalho">Trabalho</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+        <rect width="20" height="2" fill="currentColor"/>
+        <rect y="6" width="20" height="2" fill="currentColor"/>
+        <rect y="12" width="20" height="2" fill="currentColor"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section aria-labelledby="hero-title">
+      <div class="hero">
+        <p class="hero-eyebrow">Principal UX &amp; Product Designer · Lisboa, Portugal</p>
+        <h1 class="hero-title" id="hero-title">
+          Design que<br>
+          <em class="hero-em">resolve</em><br>
+          problemas reais.
+        </h1>
+        <div class="hero-base">
+          <p class="hero-desc">+15 anos em UX, design systems e acessibilidade. Responsável pela remediação de cerca de 1&nbsp;000 issues WCAG em sistemas reais. Especialista em design systems escaláveis e conformidade com a EAA&nbsp;2025.</p>
+          <div class="hero-ctas">
+            <a href="#trabalho" class="btn btn-primary">Ver trabalho</a>
+            <a href="#contacto" class="btn btn-ghost">Falar comigo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="sobre" aria-labelledby="sobre-title">
+      <div class="about-grid">
+        <div class="about-portrait-wrap">
+          <div class="about-portrait">
+            <span class="portrait-initials" role="img" aria-label="Foto de José Maria Barros — a adicionar">JB</span>
+          </div>
+          <p class="about-location">Lisboa, Portugal</p>
+        </div>
+        <div class="about-text">
+          <div class="reveal">
+            <p class="section-label">Sobre mim</p>
+            <h2 class="section-title" id="sobre-title">Craft, sistema<br>e impacto real.</h2>
+          </div>
+          <p>Sou um <strong>Principal UX / Product Designer</strong> com mais de 15 anos de experiência em UX, UI, front-end e produto digital. O meu trabalho centra-se na interseção entre design, acessibilidade e tecnologia.</p>
+          <div class="about-quote">
+            <p>Design verdadeiramente bom é invisível: o utilizador consegue o que precisa, sem fricção, sem barreiras.</p>
+          </div>
+          <p>Background técnico sólido em <strong>HTML, CSS e JavaScript</strong>. Responsável por auditorias WCAG que resultaram na correção de cerca de <strong>1&nbsp;000 issues de acessibilidade</strong> em sistemas reais.</p>
+          <ul class="skills-list reveal" aria-label="Áreas de especialidade">
+            <li>Design Systems (Figma Variables)</li>
+            <li>Acessibilidade WCAG 2.2 / EAA 2025</li>
+            <li>UX Research aplicado</li>
+            <li>AI-assisted design workflow</li>
+            <li>Prototipagem e validação</li>
+            <li>Alinhamento design–engineering</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="servicos" aria-labelledby="servicos-title">
+      <div class="services-inner">
+        <div class="reveal">
+          <p class="section-label">Serviços</p>
+          <h2 class="section-title" id="servicos-title">O que ofereço</h2>
+        </div>
+        <ol class="services-list">
+          <li class="service-row reveal">
+            <span class="service-num" aria-hidden="true">01</span>
+            <div>
+              <h3 class="service-title">Design System as a Service</h3>
+              <p class="service-desc">Criação e manutenção de design systems escaláveis com Figma Variables, tokens multi-brand e documentação completa. Para equipas sem designer dedicado.</p>
+            </div>
+            <div class="service-tags" aria-label="Tags">
+              <span class="tag">Figma</span>
+              <span class="tag">Tokens</span>
+              <span class="tag">Multi-brand</span>
+            </div>
+          </li>
+          <li class="service-row reveal">
+            <span class="service-num" aria-hidden="true">02</span>
+            <div>
+              <h3 class="service-title">Auditoria de Acessibilidade</h3>
+              <p class="service-desc">Auditorias WCAG 2.2 completas com relatório de issues e plano de remediação. Conformidade com a EAA 2025 para produtos digitais europeus.</p>
+            </div>
+            <div class="service-tags" aria-label="Tags">
+              <span class="tag">WCAG 2.2</span>
+              <span class="tag">EAA 2025</span>
+              <span class="tag">Remediação</span>
+            </div>
+          </li>
+          <li class="service-row reveal">
+            <span class="service-num" aria-hidden="true">03</span>
+            <div>
+              <h3 class="service-title">AI + Design Systems</h3>
+              <p class="service-desc">Framework completa criada com IA: tokens semânticos, componentes acessíveis e handoff rigoroso para developers. Entrega mais rápida, sem sacrificar qualidade.</p>
+            </div>
+            <div class="service-tags" aria-label="Tags">
+              <span class="tag">IA</span>
+              <span class="tag">Acessibilidade</span>
+              <span class="tag">Handoff</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="trabalho" aria-labelledby="trabalho-title">
+      <div class="work-inner">
+        <div class="reveal">
+          <p class="work-label">Casos de estudo</p>
+          <h2 class="work-title" id="trabalho-title">Trabalho seleccionado</h2>
+        </div>
+        <div class="work-grid">
+          <a href="caso-acessibilidade.html" class="work-card reveal" aria-label="Ver caso de estudo: Auditoria de Acessibilidade WCAG 2.2">
+            <div class="work-thumb" role="img" aria-label="Preview do projeto">Acessibilidade</div>
+            <p class="work-industry">Governo / Setor Público</p>
+            <h3 class="work-card-title">Auditoria de Acessibilidade WCAG 2.2</h3>
+            <p class="work-card-desc">Remediação de +400 issues em sistemas web e mobile complexos. Redução de risco legal e melhoria da experiência para todos.</p>
+            <div class="work-card-meta">
+              <span class="tag">WCAG 2.2</span>
+              <span class="tag">EAA 2025</span>
+            </div>
+            <span class="work-card-hint" aria-hidden="true">Ver caso de estudo →</span>
+          </a>
+          <a href="caso-ux-research.html" class="work-card reveal" aria-label="Ver caso de estudo: UX Research e Estratégia">
+            <div class="work-thumb" role="img" aria-label="Preview do projeto">Research</div>
+            <p class="work-industry">Ensino Superior</p>
+            <h3 class="work-card-title">UX Research &amp; Estratégia</h3>
+            <p class="work-card-desc">Research end-to-end para universidade privada: entrevistas, personas, journey maps e roadmap antes de qualquer decisão de interface.</p>
+            <div class="work-card-meta">
+              <span class="tag">UX Research</span>
+              <span class="tag">Journey Mapping</span>
+            </div>
+            <span class="work-card-hint" aria-hidden="true">Ver caso de estudo →</span>
+          </a>
+          <a href="caso-chat-ai.html" class="work-card reveal" aria-label="Ver caso de estudo: Chat AI UI Kit">
+            <div class="work-thumb" role="img" aria-label="Preview do projeto">Chat AI</div>
+            <p class="work-industry">Produto com IA</p>
+            <h3 class="work-card-title">Chat AI — UI Kit &amp; Interface Web</h3>
+            <p class="work-card-desc">UI Kit e tokens semânticos para produto de chat baseado em IA. Sistema multi-modo preparado para crescer sem dívida de design.</p>
+            <div class="work-card-meta">
+              <span class="tag">Design System</span>
+              <span class="tag">Tokens</span>
+            </div>
+            <span class="work-card-hint" aria-hidden="true">Ver caso de estudo →</span>
+          </a>
+          <a href="caso-multibrand.html" class="work-card reveal" aria-label="Ver caso de estudo: Design System Multi-brand">
+            <div class="work-thumb" role="img" aria-label="Preview do projeto">Multi-brand</div>
+            <p class="work-industry">Design System</p>
+            <h3 class="work-card-title">Design System Multi-brand</h3>
+            <p class="work-card-desc">Main brand como guideline central com sub-brands derivadas. 2 workshops, tokens em 3 camadas, zero componentes duplicados.</p>
+            <div class="work-card-meta">
+              <span class="tag">Figma Variables</span>
+              <span class="tag">Multi-brand</span>
+            </div>
+            <span class="work-card-hint" aria-hidden="true">Ver caso de estudo →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="processo" aria-labelledby="processo-title">
+      <div class="process-inner">
+        <div class="reveal">
+          <p class="section-label">Como trabalho</p>
+          <h2 class="section-title" id="processo-title">Processo</h2>
+        </div>
+        <ol class="process-list" aria-label="Fases do processo">
+          <li class="process-entry reveal">
+            <span class="process-n">01</span>
+            <h3 class="process-entry-title">Descoberta</h3>
+            <p class="process-entry-desc">Entender o problema real antes de qualquer solução. Entrevistas, análise de contexto e objetivos mensuráveis.</p>
+          </li>
+          <li class="process-entry reveal">
+            <span class="process-n">02</span>
+            <h3 class="process-entry-title">Definição</h3>
+            <p class="process-entry-desc">Síntese do research em insights acionáveis. Personas, journey maps e definição clara do problema.</p>
+          </li>
+          <li class="process-entry reveal">
+            <span class="process-n">03</span>
+            <h3 class="process-entry-title">Design</h3>
+            <p class="process-entry-desc">Wireframes e protótipos de alta fidelidade. Iteração com validação de utilizadores e stakeholders.</p>
+          </li>
+          <li class="process-entry reveal">
+            <span class="process-n">04</span>
+            <h3 class="process-entry-title">Entrega</h3>
+            <p class="process-entry-desc">Handoff rigoroso para engenharia, documentação completa. Acessibilidade verificada em cada entrega.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="contact-inner">
+        <div>
+          <div class="reveal">
+            <p class="contact-label">Contacto</p>
+            <h2 class="contact-heading" id="contacto-title">Vamos trabalhar<br>juntos.</h2>
+          </div>
+          <p class="contact-desc reveal">Tens um produto que precisa de um design system robusto? Uma plataforma que não cumpre os requisitos da EAA 2025? Queres usar IA para criar design systems acessíveis mais rapidamente?</p>
+          <address class="contact-links reveal" aria-label="Contactos">
+            <a href="mailto:josemariabarros@gmail.com" class="contact-link">
+              <span class="contact-link-icon" aria-hidden="true">✉</span>
+              josemariabarros@gmail.com
+            </a>
+            <a href="tel:+351937552024" class="contact-link">
+              <span class="contact-link-icon" aria-hidden="true">☏</span>
+              +351 93 755 2024
+            </a>
+            <a href="https://linkedin.com/in/josemariabarros" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-link-icon" aria-hidden="true">in</span>
+              linkedin.com/in/josemariabarros
+              <span class="sr-only">(abre numa nova janela)</span>
+            </a>
+          </address>
+        </div>
+        <div class="reveal">
+          <form class="contact-form" id="contact-form" action="mailto:josemariabarros@gmail.com" method="post" enctype="text/plain" aria-label="Formulário de contacto" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Nome <span class="req" aria-label="obrigatório">*</span></label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="O teu nome" required autocomplete="name" aria-required="true" aria-describedby="name-hint" />
+              <span class="form-hint" id="name-hint">Nome próprio e apelido</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email <span class="req" aria-label="obrigatório">*</span></label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required autocomplete="email" aria-required="true" inputmode="email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Assunto</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Design System, Acessibilidade, IA..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Mensagem <span class="req" aria-label="obrigatório">*</span></label>
+              <textarea id="message" name="message" class="form-input" placeholder="Conta-me sobre o teu projecto..." required aria-required="true" rows="5"></textarea>
+            </div>
+            <p class="form-hint"><span aria-hidden="true">*</span> Campos obrigatórios</p>
+            <button type="submit" class="btn btn-inv" style="align-self: flex-start;">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2026 José Maria Barros · Lisboa, Portugal · <a href="mailto:josemariabarros@gmail.com">josemariabarros@gmail.com</a></p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const burger = document.querySelector('.nav-burger');
+    const navLinks = document.getElementById('nav-links');
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.setAttribute('aria-label', 'Abrir menu');
+      });
+    });
+
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (e) => {
+      let valid = true;
+      form.querySelectorAll('[required]').forEach(field => {
+        if (!field.value.trim()) { field.setAttribute('aria-invalid', 'true'); valid = false; }
+        else { field.removeAttribute('aria-invalid'); }
+      });
+      if (!valid) {
+        e.preventDefault();
+        const first = form.querySelector('[aria-invalid="true"]');
+        if (first) first.focus();
+      }
+    });
+    form.querySelectorAll('[required]').forEach(field => {
+      field.addEventListener('input', () => {
+        if (field.value.trim()) field.removeAttribute('aria-invalid');
+      });
+    });
+  </script>
+
+</body>
+</html>
