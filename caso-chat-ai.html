@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat AI — UI Kit &amp; Interface Web — José Maria Barros</title>
+  <meta name="description" content="UI Kit e tokens semânticos para produto de chat baseado em IA. Sistema multi-modo preparado para crescer sem dívida de design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Serif+4:ital,opsz,wght@1,8..60,200..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="index.html" class="nav-logo" aria-label="José Maria Barros — início">
+      José Maria Barros<span class="nav-logo-dot" aria-hidden="true">.</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="index.html#servicos">Serviços</a></li>
+      <li><a href="index.html#trabalho">Trabalho</a></li>
+      <li><a href="index.html#processo">Processo</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+        <rect width="20" height="2" fill="currentColor"/>
+        <rect y="6" width="20" height="2" fill="currentColor"/>
+        <rect y="12" width="20" height="2" fill="currentColor"/>
+      </svg>
+    </button>
+  </nav>
+  <div class="case-progress" aria-hidden="true"></div>
+
+  <main id="main-content">
+    <article>
+
+      <!-- HEADER -->
+      <header class="case-header">
+        <div class="case-header-inner">
+          <a href="index.html#trabalho" class="case-back">
+            <span aria-hidden="true">←</span> Casos de estudo
+          </a>
+          <p class="case-industry">Produto com IA</p>
+          <h1 class="case-title">Chat AI — UI Kit<br>&amp;&nbsp;Interface Web</h1>
+          <div class="case-chips" aria-label="Informação do projeto">
+            <span class="case-chip">Design System</span>
+            <span class="case-chip">Tokens</span>
+            <span class="case-chip">Multi-modo</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTEXTO -->
+      <section class="case-section" aria-labelledby="ctx-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="ctx-title">Contexto</p>
+          </div>
+          <div class="case-content">
+            <p class="case-intro">Projeto de um chat baseado em AI para ambiente web, com foco em <strong>clareza, consistência e escalabilidade</strong>.</p>
+            <p>O desafio foi criar uma interface simples para o utilizador, mas <strong>robusta a nível de sistema</strong>, preparada para evoluir.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE 1 -->
+      <div class="case-image-wrap reveal">
+        <figure class="case-figure case-figure--single">
+          <img
+            src="assets/images/chat-ai-interface.png"
+            alt="Interface do chat AZQ GPT: painel lateral com assistentes e histórico de conversas, área de chat com campo de input, e overlay de avaliação de experiência com escala de emoji"
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Interface do chat — Python Expert com feedback integrado não intrusivo</figcaption>
+        </figure>
+      </div>
+
+      <!-- O MEU PAPEL -->
+      <section class="case-section case-section--light" aria-labelledby="role-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="role-title">O meu papel</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-list" aria-label="Responsabilidades">
+              <li>Definição do UI Kit</li>
+              <li>Criação de tokens semânticos</li>
+              <li>Estruturação para múltiplos contextos (default, confidencial, dark)</li>
+              <li>Design da interface e estados do chat</li>
+              <li>Entrevistas contextuais com utilizadores</li>
+              <li>Testes de usabilidade</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABORDAGEM -->
+      <section class="case-section" aria-labelledby="approach-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="approach-title">Abordagem</p>
+          </div>
+          <div class="case-content">
+            <p>O foco foi criar um <strong>sistema semântico</strong>, separando intenção de apresentação, permitindo:</p>
+            <ul class="case-list case-list--compact" aria-label="Objetivos da abordagem">
+              <li>Escalabilidade</li>
+              <li>Consistência entre componentes</li>
+              <li>Melhor alinhamento com desenvolvimento</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI KIT & TOKENS -->
+      <section class="case-section case-section--light" aria-labelledby="uikit-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="uikit-title">UI Kit &amp; Tokens</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-list" aria-label="Estrutura do UI Kit">
+              <li>Tokens organizados por função: texto, superfícies, ações, notificações</li>
+              <li>Estados claros para ações primárias</li>
+              <li>Reutilização entre modos e contextos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE 2 -->
+      <div class="case-image-wrap case-image-wrap--light reveal">
+        <figure class="case-figure case-figure--single">
+          <img
+            src="assets/images/chat-ai-tokens.png"
+            alt="Painel de variáveis no Figma: colecção semântica com tokens de texto, superfície e ícone organizados por grupos, com valores para Default, Confidential e Dark Mode"
+            width="1280"
+            height="860"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Tokens semânticos — colecção com modos Default, Confidential e Dark</figcaption>
+        </figure>
+      </div>
+
+      <!-- INTERFACE DO CHAT -->
+      <section class="case-section" aria-labelledby="interface-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="interface-title">Interface do Chat</p>
+          </div>
+          <div class="case-content">
+            <ol class="case-problems-list" aria-label="Princípios de design da interface">
+              <li>
+                <span class="problem-n" aria-hidden="true">01</span>
+                <p>Redução da carga cognitiva</p>
+              </li>
+              <li>
+                <span class="problem-n" aria-hidden="true">02</span>
+                <p>Feedback claro do sistema</p>
+              </li>
+              <li>
+                <span class="problem-n" aria-hidden="true">03</span>
+                <p>Estados explícitos de interação</p>
+              </li>
+              <li>
+                <span class="problem-n" aria-hidden="true">04</span>
+                <p>Avaliação da experiência integrada de forma não intrusiva</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTADO -->
+      <section class="case-section case-section--dark" aria-labelledby="result-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="result-title">Resultado</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-results-list" aria-label="Resultados do projeto">
+              <li>Interface consistente e clara</li>
+              <li>Sistema preparado para crescimento</li>
+              <li>UI Kit reutilizável</li>
+              <li>Menos decisões ad-hoc em novos ecrãs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGES 3, 4, 5 -->
+      <div class="case-image-wrap reveal">
+        <div class="case-image-triple">
+          <figure class="case-figure">
+            <img
+              src="assets/images/chat-ai-uikit-dark.png"
+              alt="Componentes em dark mode: campos de texto em vários estados (placeholder, focused, filled), botões secundários, tabs e lista de radio buttons"
+              width="820"
+              height="580"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Componentes em dark mode</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img
+              src="assets/images/chat-ai-assistants.png"
+              alt="Página de Assistentes em dois layouts: versão de coluna única e versão expandida side-by-side, mostrando a grelha de assistentes populares e filtros de categoria"
+              width="820"
+              height="580"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Página de Assistentes — layouts responsivos</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img
+              src="assets/images/chat-ai-input-docs.png"
+              alt="Documentação do componente Input Field: estados default, disabled, error e focused, secções de hints, exemplos e especificações de ARIA e navegação por teclado"
+              width="820"
+              height="580"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Documentação de componente — Input Field</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- O QUE ESTE PROJETO DEMONSTRA -->
+      <section class="case-section" aria-labelledby="demonstrates-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="demonstrates-title">O que este<br>projeto demonstra</p>
+          </div>
+          <div class="case-content">
+            <!-- TODO: preencher competências demonstradas -->
+            <ul class="case-list" aria-label="Competências demonstradas">
+              <li>Competência a preencher</li>
+              <li>Competência a preencher</li>
+              <li>Competência a preencher</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Caso de estudo seguinte">
+        <a href="caso-multibrand.html" class="case-nav-link">
+          <span class="case-nav-label">Caso seguinte</span>
+          <span class="case-nav-title">Design System Multi-brand →</span>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2026 José Maria Barros · Lisboa, Portugal · <a href="mailto:josemariabarros@gmail.com">josemariabarros@gmail.com</a></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>

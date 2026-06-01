@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System Multi-brand — José Maria Barros</title>
+  <meta name="description" content="Design system multi-brand com tokens em 3 camadas para empresa do setor da energia. Marca principal e duas sub-marcas distintas mas reconhecíveis como família." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Serif+4:ital,opsz,wght@1,8..60,200..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="index.html" class="nav-logo" aria-label="José Maria Barros — início">
+      José Maria Barros<span class="nav-logo-dot" aria-hidden="true">.</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="index.html#servicos">Serviços</a></li>
+      <li><a href="index.html#trabalho">Trabalho</a></li>
+      <li><a href="index.html#processo">Processo</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+        <rect width="20" height="2" fill="currentColor"/>
+        <rect y="6" width="20" height="2" fill="currentColor"/>
+        <rect y="12" width="20" height="2" fill="currentColor"/>
+      </svg>
+    </button>
+  </nav>
+  <div class="case-progress" aria-hidden="true"></div>
+
+  <main id="main-content">
+    <article>
+
+      <!-- HEADER -->
+      <header class="case-header">
+        <div class="case-header-inner">
+          <a href="index.html#trabalho" class="case-back">
+            <span aria-hidden="true">←</span> Casos de estudo
+          </a>
+          <p class="case-industry">Setor da Energia</p>
+          <h1 class="case-title">Design System<br>Multi-brand</h1>
+          <div class="case-chips" aria-label="Informação do projeto">
+            <span class="case-chip">Figma Variables</span>
+            <span class="case-chip">Tokens 3 camadas</span>
+            <span class="case-chip">Multi-brand</span>
+            <span class="case-chip">Workshops</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTEXTO -->
+      <section class="case-section" aria-labelledby="ctx-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="ctx-title">Contexto</p>
+          </div>
+          <div class="case-content">
+            <p class="case-intro">Uma empresa do setor da energia tinha uma marca principal e duas sub-marcas com identidades visuais muito distintas entre si. Faltava consistência e uma ligação natural à marca raiz.</p>
+            <p>O objetivo do cliente era claro: <strong>manter a distinção entre as três marcas, mas que qualquer pessoa as reconhecesse imediatamente como pertencentes à mesma família.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE 1 — par: workshops de descoberta -->
+      <div class="case-image-wrap reveal">
+        <div class="case-image-pair">
+          <figure class="case-figure">
+            <img
+              src="assets/images/multibrand-workshop-strategy.png"
+              alt="FigJam board do workshop de estratégia: secções de O que é um Design System, Porquê Agora, Visão e Objectivos, e Critérios de Sucesso, com stickies e anotações dos participantes"
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Workshop 1 — Estratégia e alinhamento</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img
+              src="assets/images/multibrand-workshop-identity.png"
+              alt="FigJam board do workshop de identidade: missão, valores, personalidade, público-alvo e proposta única de valor para as três marcas, organizados em colunas por marca"
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Workshop 2 — Identidade e necessidades das três marcas</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- O MEU PAPEL -->
+      <section class="case-section case-section--light" aria-labelledby="role-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="role-title">O meu papel</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-list" aria-label="Responsabilidades">
+              <li>Condução de workshops de alinhamento estratégico (2 sessões)</li>
+              <li>Brand audit e design audit às três marcas</li>
+              <li>Benchmark de design systems no setor da energia</li>
+              <li>Criação do design system multi-brand de raiz</li>
+              <li>Definição das foundations: cores, tipografia, espaçamento, grid, efeitos e logos</li>
+              <li>Documentação de boas práticas e acessibilidade por componente</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- DESAFIOS IDENTIFICADOS -->
+      <section class="case-section" aria-labelledby="challenges-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="challenges-title">Principais desafios<br>identificados</p>
+          </div>
+          <div class="case-content">
+            <ol class="case-problems-list" aria-label="Desafios identificados no projeto">
+              <li>
+                <span class="problem-n" aria-hidden="true">01</span>
+                <p>Três marcas sem ADN visual partilhado</p>
+              </li>
+              <li>
+                <span class="problem-n" aria-hidden="true">02</span>
+                <p>Ausência de tokens com herança entre marcas</p>
+              </li>
+              <li>
+                <span class="problem-n" aria-hidden="true">03</span>
+                <p>Componentes duplicados sem sistema de referência comum</p>
+              </li>
+              <li>
+                <span class="problem-n" aria-hidden="true">04</span>
+                <p>Sem critérios de acessibilidade definidos ou documentados</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- DESCOBERTA: WORKSHOPS + AUDITORIAS -->
+      <section class="case-section case-section--light" aria-labelledby="discovery-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="discovery-title">Descoberta</p>
+          </div>
+          <div class="case-content">
+            <p>Dois workshops estruturados com o cliente antes de qualquer decisão de sistema:</p>
+            <ol class="case-problems-list" aria-label="Workshops realizados">
+              <li>
+                <span class="problem-n" aria-hidden="true">01</span>
+                <div>
+                  <p>Estratégia e alinhamento</p>
+                  <p class="problem-sub">Visão, critérios de sucesso, validação da viabilidade técnica do multi-branding, identificação de necessidades e plano de ação imediato.</p>
+                </div>
+              </li>
+              <li>
+                <span class="problem-n" aria-hidden="true">02</span>
+                <div>
+                  <p>Identidade e necessidades</p>
+                  <p class="problem-sub">Aprofundamento das identidades das três marcas, análise de contexto e validação de necessidades para informar a criação do design system.</p>
+                </div>
+              </li>
+            </ol>
+            <p style="margin-top: var(--sp-8)">Complementado com três auditorias:</p>
+            <ul class="case-list case-list--compact" aria-label="Auditorias e benchmark realizados">
+              <li>Brand audit às três marcas</li>
+              <li>Design audit aos sites existentes das três marcas</li>
+              <li>Benchmark de 3 design systems no setor da energia</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARQUITETURA DO SISTEMA -->
+      <section class="case-section" aria-labelledby="architecture-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="architecture-title">Arquitetura do sistema</p>
+          </div>
+          <div class="case-content">
+            <p>Tokens organizados em três camadas: <strong>global</strong> (valores base), <strong>alias</strong> (mapeamento semântico) e <strong>component</strong> (uso específico). A marca principal define as foundations; as sub-marcas herdam e sobrepõem apenas o necessário.</p>
+            <p>Foundations criadas de raiz para as três marcas:</p>
+            <ul class="case-list case-list--compact" aria-label="Foundations do design system">
+              <li>Cores</li>
+              <li>Tipografia</li>
+              <li>Espaçamento</li>
+              <li>Grid e breakpoints</li>
+              <li>Efeitos</li>
+              <li>Logos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE 2 — triplo: outputs do sistema -->
+      <div class="case-image-wrap reveal">
+        <div class="case-image-triple">
+          <figure class="case-figure">
+            <img
+              src="assets/images/multibrand-colors.png"
+              alt="Sistema de cores SEL Design System: paletas Primary Dark Teal, Primary Blue, secundárias, Accent, e paletas EDGE e REEF com escalas de tom de 50 a 950 e valores de contraste WCAG"
+              width="960"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Foundations — sistema de cores com 3 marcas e cores semânticas</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img
+              src="assets/images/multibrand-components.png"
+              alt="Biblioteca de componentes: cards em estados loading e empty, cards de gráficos de composição, comparação e distribuição, cards de informação e acção com variantes Primary, List e KPI, e exemplos de aplicação com fotografias reais"
+              width="960"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Biblioteca de componentes — cards com variantes e estados</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img
+              src="assets/images/multibrand-docs.png"
+              alt="Documentação do componente Button: tipos Primary, Secondary, Ghost, Link e Destructive; tamanhos SM, MD e LG; estados Default, Hover, Pressed, Focus, Disabled e Loading; suporte a ícones; variantes por marca SEL, EDGE e REEF; anatomia e boas práticas; guidelines de acessibilidade WCAG"
+              width="960"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Documentação — Buttons com guidelines de acessibilidade por componente</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- RESULTADO -->
+      <section class="case-section case-section--dark" aria-labelledby="result-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="result-title">Resultado</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-results-list" aria-label="Resultados do projeto">
+              <li>Design system multi-brand coerente, com herança de tokens em 3 camadas</li>
+              <li>Três marcas distintas mas imediatamente reconhecíveis como família</li>
+              <li>Zero componentes duplicados: herança garantida por tokens</li>
+              <li>Documentação completa com boas práticas e critérios de acessibilidade por componente</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- O QUE ESTE PROJETO DEMONSTRA -->
+      <section class="case-section" aria-labelledby="demonstrates-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="demonstrates-title">O que este<br>projeto demonstra</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-list" aria-label="Competências demonstradas">
+              <li>Capacidade de conduzir o processo completo: descoberta, estratégia e entrega</li>
+              <li>Profundidade em arquitetura de design systems e tokens multi-brand</li>
+              <li>Pensamento sistémico aplicado a problemas reais de identidade de marca</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Ver todos os casos de estudo">
+        <a href="index.html#trabalho" class="case-nav-link">
+          <span class="case-nav-label">Ver todos os casos</span>
+          <span class="case-nav-title">← Trabalho seleccionado</span>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2026 José Maria Barros · Lisboa, Portugal · <a href="mailto:josemariabarros@gmail.com">josemariabarros@gmail.com</a></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>

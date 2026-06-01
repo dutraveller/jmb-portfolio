@@ -521,3 +521,63 @@ footer a:hover { text-decoration: underline; }
 @media (hover: none) {
   .work-card-hint { opacity: 1; }
 }
+
+/* =====================
+   DELIGHT
+   ===================== */
+
+/* Active nav indicator — underline slides in from left */
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -3px; left: 0; right: 0;
+  height: 1px; background: var(--c-action);
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform 0.3s var(--ease);
+}
+.nav-links a.active { color: var(--c-text-1); }
+.nav-links a.active::after,
+.nav-links a:hover::after { transform: scaleX(1); }
+
+/* Logo dot — one-time pulse on load */
+.nav-logo-dot {
+  display: inline-block;
+  animation: dotPulse 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.5s both;
+}
+@keyframes dotPulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.6); }
+  55%  { transform: scale(0.8); }
+  75%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Count-up target */
+.count-target { display: inline; }
+
+/* Service row hover */
+.service-num { transition: color 0.25s var(--ease); }
+.service-row { transition: background 0.25s var(--ease); }
+.service-row:hover { background: var(--c-green-50); }
+.service-row:hover .service-num { color: var(--c-action); }
+
+/* Work thumbnail: wireframe grid reveals on card hover */
+.work-thumb { position: relative; overflow: hidden; }
+.work-thumb img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.work-thumb::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: 2px;
+  background-image:
+    linear-gradient(oklch(95% 0.018 90 / 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(95% 0.018 90 / 0.09) 1px, transparent 1px);
+  background-size: 25% 25%;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  pointer-events: none;
+}
+.work-card:hover .work-thumb::after { opacity: 1; }
