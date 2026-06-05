@@ -199,6 +199,12 @@ body {
   font-size: 5rem; letter-spacing: -0.04em;
   color: var(--c-green-100);
 }
+.about-portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .about-location {
   margin-top: var(--sp-3);
   font-size: 0.6875rem; font-weight: 500;
