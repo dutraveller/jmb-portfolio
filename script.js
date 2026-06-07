@@ -23,10 +23,33 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => se
 
 const form = document.getElementById('contact-form');
 if (form) {
+  // Mensagens de erro por campo
+  const fieldErrors = {
+    name:    { el: document.getElementById('name-error'),    msg: 'Por favor indica o teu nome.' },
+    email:   { el: document.getElementById('email-error'),   msg: 'Por favor indica um endereço de email válido.' },
+    message: { el: document.getElementById('message-error'), msg: 'Por favor escreve uma mensagem.' },
+  };
+  function setFieldError(field, hasError) {
+    const entry = fieldErrors[field.id];
+    if (!entry || !entry.el) return;
+    if (hasError) {
+      field.setAttribute('aria-invalid', 'true');
+      entry.el.textContent = entry.msg;
+      entry.el.removeAttribute('hidden');
+    } else {
+      field.removeAttribute('aria-invalid');
+      entry.el.textContent = '';
+      entry.el.setAttribute('hidden', '');
+    }
+  }
+
   // Validação em tempo real
   form.querySelectorAll('[required]').forEach(field => {
     field.addEventListener('input', () => {
-      if (field.value.trim()) field.removeAttribute('aria-invalid');
+      if (field.value.trim()) setFieldError(field, false);
+    });
+    field.addEventListener('blur', () => {
+      if (!field.value.trim()) setFieldError(field, true);
     });
   });
 
@@ -36,8 +59,8 @@ if (form) {
     // Validação
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
-      if (!field.value.trim()) { field.setAttribute('aria-invalid', 'true'); valid = false; }
-      else { field.removeAttribute('aria-invalid'); }
+      if (!field.value.trim()) { setFieldError(field, true); valid = false; }
+      else { setFieldError(field, false); }
     });
     if (!valid) {
       const first = form.querySelector('[aria-invalid="true"]');

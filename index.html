@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>José Maria Barros — UX & Product Designer</title>
   <meta name="description" content="Principal UX & Product Designer. Design Systems acessíveis, WCAG 2.2, EAA 2025. Lisboa, Portugal." />
+  <meta name="theme-color" content="#0e1a10" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://josemariabarros.com/" />
+  <meta property="og:title" content="José Maria Barros — UX & Product Designer" />
+  <meta property="og:description" content="Principal UX & Product Designer. Design Systems acessíveis, WCAG 2.2, EAA 2025. Lisboa, Portugal." />
+  <meta property="og:image" content="https://josemariabarros.com/assets/images/jose-maria-barros.jpeg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="José Maria Barros — UX & Product Designer" />
+  <meta name="twitter:description" content="Principal UX & Product Designer. Design Systems acessíveis, WCAG 2.2, EAA 2025. Lisboa, Portugal." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Serif+4:ital,opsz,wght@1,8..60,200..900&display=swap" rel="stylesheet" />
@@ -282,20 +292,23 @@
           <form class="contact-form" id="contact-form" action="https://formspree.io/f/xaqzevlq" method="POST" aria-label="Formulário de contacto" novalidate>
             <div class="form-group">
               <label class="form-label" for="name">Nome <span class="req" aria-label="obrigatório">*</span></label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="O teu nome" required autocomplete="name" aria-required="true" aria-describedby="name-hint" />
+              <input type="text" id="name" name="name" class="form-input" placeholder="O teu nome" required autocomplete="name" aria-required="true" aria-describedby="name-hint name-error" />
               <span class="form-hint" id="name-hint">Nome próprio e apelido</span>
+              <span class="form-field-error" id="name-error" role="alert" aria-live="polite" hidden></span>
             </div>
             <div class="form-group">
               <label class="form-label" for="email">Email <span class="req" aria-label="obrigatório">*</span></label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required autocomplete="email" aria-required="true" inputmode="email" />
+              <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required autocomplete="email" aria-required="true" inputmode="email" aria-describedby="email-error" />
+              <span class="form-field-error" id="email-error" role="alert" aria-live="polite" hidden></span>
             </div>
             <div class="form-group">
               <label class="form-label" for="subject">Assunto</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="Design System, Acessibilidade, IA..." />
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Design System, Acessibilidade, IA..." autocomplete="off" />
             </div>
             <div class="form-group">
               <label class="form-label" for="message">Mensagem <span class="req" aria-label="obrigatório">*</span></label>
-              <textarea id="message" name="message" class="form-input" placeholder="Conta-me sobre o teu projecto..." required aria-required="true" rows="5"></textarea>
+              <textarea id="message" name="message" class="form-input" placeholder="Conta-me sobre o teu projecto..." required aria-required="true" rows="5" aria-describedby="message-error"></textarea>
+              <span class="form-field-error" id="message-error" role="alert" aria-live="polite" hidden></span>
             </div>
             <p class="form-hint"><span aria-hidden="true">*</span> Campos obrigatórios</p>
             <button type="submit" class="btn btn-inv" style="align-self: flex-start;">Enviar mensagem</button>

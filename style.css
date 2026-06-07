@@ -447,6 +447,8 @@ body {
 .form-input[aria-invalid="true"] { border-color: oklch(65% 0.15 25); }
 textarea.form-input { resize: vertical; min-height: 130px; }
 .form-hint { font-size: 0.6875rem; color: var(--c-text-inv-3); }
+.form-field-error { display: block; font-size: 0.6875rem; color: oklch(65% 0.18 25); margin-top: 0.25rem; }
+.form-field-error[hidden] { display: none; }
 
 /* =====================
    FOOTER
