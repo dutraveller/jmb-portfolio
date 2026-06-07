@@ -6,8 +6,8 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Bricolage Grotesque', system-ui, sans-serif;
   font-optical-sizing: auto;
-  background: oklch(97.5% 0.006 90);
-  color: oklch(17% 0.008 90);
+  background: var(--c-page);
+  color: var(--c-text-1);
   font-size: 1rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +43,7 @@ body {
   height: var(--nav-h);
   padding: 0 var(--sp-8);
   display: flex; justify-content: space-between; align-items: center;
-  background: oklch(97.5% 0.006 90 / 0.93);
+  background: var(--c-nav-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--c-border);
 }
@@ -101,7 +101,7 @@ body {
 .btn-ghost:hover { color: var(--c-text-1); border-color: var(--c-text-2); }
 .btn-inv {
   background: transparent; color: var(--c-text-inv);
-  border-color: oklch(95% 0.018 90 / 0.3);
+  border-color: oklch(95% 0.018 90 / 0.3); /* deliberate: btn-inv border sits between border-inv and text-inv */
 }
 .btn-inv:hover { border-color: var(--c-text-inv); }
 
@@ -299,7 +299,7 @@ body {
 .work-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
   gap: 1px;
-  background: oklch(95% 0.018 90 / 0.07);
+  background: var(--c-surface-inv-hover);
 }
 .work-card {
   background: oklch(95% 0.018 90 / 0.03);
@@ -307,14 +307,14 @@ body {
   display: block; color: inherit;
   transition: background 0.2s var(--ease);
 }
-.work-card:hover { background: oklch(95% 0.018 90 / 0.07); }
+.work-card:hover { background: var(--c-surface-inv-hover); }
 .work-thumb {
   width: 100%; aspect-ratio: 16/9;
   background: oklch(95% 0.018 90 / 0.04);
   border-radius: 2px; margin-bottom: var(--sp-5);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-serif); font-style: italic;
-  font-size: 1.4rem; color: oklch(95% 0.018 90 / 0.10);
+  font-size: 1.4rem; color: var(--c-border-inv);
 }
 .work-industry {
   font-size: 0.6875rem; font-weight: 500;
@@ -332,7 +332,7 @@ body {
 }
 .work-card-meta { margin-top: var(--sp-4); }
 .work-card .tag {
-  background: oklch(95% 0.018 90 / 0.05);
+  background: var(--c-surface-inv-subtle);
   border-color: oklch(95% 0.018 90 / 0.12);
   color: var(--c-text-inv-2);
   margin-right: var(--sp-2); margin-bottom: var(--sp-2);
@@ -414,7 +414,7 @@ body {
 .contact-link {
   display: flex; align-items: center; gap: var(--sp-4);
   font-size: 0.9375rem; font-weight: 300;
-  color: oklch(95% 0.018 90 / 0.55); text-decoration: none;
+  color: var(--c-text-inv-3); text-decoration: none;
   min-height: var(--touch);
   transition: color 0.2s var(--ease);
 }
@@ -430,13 +430,13 @@ body {
 .form-label {
   font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: oklch(95% 0.018 90 / 0.55);
+  color: var(--c-text-inv-3);
 }
 .form-label .req { color: var(--c-green-200); margin-left: 2px; }
 .form-input {
   padding: var(--sp-3) var(--sp-4);
   font-family: var(--font-sans); font-size: 0.9375rem;
-  background: oklch(95% 0.018 90 / 0.05);
+  background: var(--c-surface-inv-subtle);
   border: 1px solid oklch(95% 0.018 90 / 0.15);
   border-radius: 2px; color: var(--c-text-inv);
   outline: none; width: 100%; min-height: var(--touch);
@@ -444,10 +444,10 @@ body {
 }
 .form-input:focus { border-color: var(--c-green-200); }
 .form-input::placeholder { color: oklch(95% 0.018 90 / 0.4); }
-.form-input[aria-invalid="true"] { border-color: oklch(65% 0.15 25); }
+.form-input[aria-invalid="true"] { border-color: var(--c-error-inv); }
 textarea.form-input { resize: vertical; min-height: 130px; }
 .form-hint { font-size: 0.6875rem; color: var(--c-text-inv-3); }
-.form-field-error { display: block; font-size: 0.6875rem; color: oklch(65% 0.18 25); margin-top: 0.25rem; }
+.form-field-error { display: block; font-size: 0.6875rem; color: var(--c-error-inv); margin-top: 0.25rem; }
 .form-field-error[hidden] { display: none; }
 
 /* =====================
@@ -455,7 +455,7 @@ textarea.form-input { resize: vertical; min-height: 130px; }
    ===================== */
 footer {
   background: var(--c-green-950);
-  border-top: 1px solid oklch(95% 0.018 90 / 0.08);
+  border-top: 1px solid var(--c-border-inv);
   color: var(--c-text-inv-3);
   padding: var(--sp-8); text-align: center;
   font-size: 0.8125rem; font-weight: 300;
@@ -511,7 +511,7 @@ footer a:hover { text-decoration: underline; }
   .nav-links.open {
     display: flex; flex-direction: column;
     position: absolute; top: 100%; left: 0; right: 0;
-    background: oklch(97.5% 0.006 90 / 0.98);
+    background: var(--c-nav-bg-open);
     border-bottom: 1px solid var(--c-border);
     padding: var(--sp-4); gap: var(--sp-4);
   }

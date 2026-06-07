@@ -17,8 +17,20 @@
   --c-text-inv: oklch(95%  0.018 90);
 
   /* Text — dark green surfaces (--c-green-900 / --c-green-950) */
-  --c-text-inv-2: oklch(95% 0.018 90 / 0.65);
-  --c-text-inv-3: oklch(95% 0.018 90 / 0.5);
+  --c-text-inv-2:         oklch(95% 0.018 90 / 0.65);
+  --c-text-inv-3:         oklch(95% 0.018 90 / 0.5);
+
+  /* Surfaces & borders — dark green surfaces */
+  --c-border-inv:         oklch(95% 0.018 90 / 0.10); /* dividers */
+  --c-surface-inv-hover:  oklch(95% 0.018 90 / 0.07); /* interactive hover */
+  --c-surface-inv-subtle: oklch(95% 0.018 90 / 0.05); /* subtle fill */
+
+  /* Navigation glass */
+  --c-nav-bg:             oklch(97.5% 0.006 90 / 0.93);
+  --c-nav-bg-open:        oklch(97.5% 0.006 90 / 0.98);
+
+  /* Error on dark surfaces */
+  --c-error-inv:          oklch(65% 0.17 25);
 
   /* Green scale */
   --c-green-950: oklch(19% 0.09  142);

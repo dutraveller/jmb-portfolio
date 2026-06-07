@@ -135,9 +135,9 @@
   font-size: 1.0625rem; font-weight: 300;
   line-height: 1.7; color: var(--c-text-inv-2);
   padding: var(--sp-4) 0;
-  border-bottom: 1px solid oklch(95% 0.018 90 / 0.1);
+  border-bottom: 1px solid var(--c-border-inv);
 }
-.case-results-list li:first-child { border-top: 1px solid oklch(95% 0.018 90 / 0.1); }
+.case-results-list li:first-child { border-top: 1px solid var(--c-border-inv); }
 
 /* ---- Image placeholder ---- */
 .case-image-wrap {
