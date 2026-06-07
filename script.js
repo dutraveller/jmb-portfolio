@@ -59,8 +59,11 @@ if (form) {
       });
 
       if (res.ok) {
-        form.reset();
-        form.innerHTML = '<p class="form-success" role="status">Mensagem enviada. Responderei em breve.</p>';
+        const msg = document.createElement('p');
+        msg.className = 'form-success';
+        msg.setAttribute('role', 'status');
+        msg.textContent = 'Mensagem enviada. Responderei em breve.';
+        form.replaceWith(msg);
       } else {
         btn.disabled = false;
         btn.textContent = originalText;
