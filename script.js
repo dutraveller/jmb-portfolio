@@ -63,7 +63,8 @@ if (form) {
         msg.className = 'form-success';
         msg.setAttribute('role', 'status');
         msg.textContent = 'Mensagem enviada. Responderei em breve.';
-        form.replaceWith(msg);
+        const wrapper = form.closest('.reveal') || form.parentElement;
+        wrapper.replaceWith(msg);
       } else {
         btn.disabled = false;
         btn.textContent = originalText;
