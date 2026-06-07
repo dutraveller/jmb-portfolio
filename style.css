@@ -516,8 +516,8 @@ footer a:hover { text-decoration: underline; }
     padding: var(--sp-4); gap: var(--sp-4);
   }
   .nav-burger { display: flex; }
-  .hero { padding: calc(var(--nav-h) + var(--sp-8)) var(--sp-4) var(--sp-12); }
-  .hero-title { padding-bottom: var(--sp-8); }
+  .hero { padding: calc(var(--nav-h) + var(--sp-8)) var(--sp-4) var(--sp-12); min-height: auto; }
+  .hero-title { flex: none; padding-bottom: var(--sp-8); }
   .about,
   .services,
   .work,
