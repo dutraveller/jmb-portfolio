@@ -383,6 +383,12 @@ body {
    CONTACT
    ===================== */
 .contact { background: var(--c-green-950); padding: var(--sp-32) var(--sp-8); }
+.contact .form-success {
+  max-width: var(--max-w); margin: 0 auto;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--c-green-100);
+  font-weight: 500;
+}
 .contact-inner {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: var(--sp-20); max-width: var(--max-w);
