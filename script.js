@@ -11,7 +11,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const burger = document.querySelector('.nav-burger');
 const navLinks = document.getElementById('nav-links');
 const iconMenu = '<rect width="20" height="2" fill="currentColor"/><rect y="6" width="20" height="2" fill="currentColor"/><rect y="12" width="20" height="2" fill="currentColor"/>';
-const iconClose = '<line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+const iconClose = '<line x1="2" y1="1" x2="18" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="1" x2="2" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
 function setMenuState(open) {
   navLinks.classList.toggle('open', open);
   burger.setAttribute('aria-expanded', String(open));
