@@ -101,7 +101,7 @@ body {
 .btn-ghost:hover { color: var(--c-text-1); border-color: var(--c-text-2); }
 .btn-inv {
   background: transparent; color: var(--c-text-inv);
-  border-color: oklch(95% 0.018 90 / 0.3); /* deliberate: btn-inv border sits between border-inv and text-inv */
+  border-color: oklch(95% 0.018 90 / 0.3);
 }
 .btn-inv:hover { border-color: var(--c-text-inv); }
 
@@ -307,7 +307,8 @@ body {
   display: block; color: inherit;
   transition: background 0.2s var(--ease);
 }
-.work-card:hover { background: var(--c-surface-inv-hover); }
+.work-card:hover  { background: var(--c-surface-inv-hover); }
+.work-card:active { background: oklch(95% 0.018 90 / 0.11); }
 .work-thumb {
   width: 100%; aspect-ratio: 16/9;
   background: oklch(95% 0.018 90 / 0.04);
@@ -388,6 +389,11 @@ body {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: var(--c-green-100);
   font-weight: 500;
+}
+.contact .form-error {
+  margin-top: var(--sp-3);
+  font-size: 0.875rem; color: var(--c-error-inv);
+  font-weight: 400;
 }
 .contact-inner {
   display: grid; grid-template-columns: 1fr 1fr;

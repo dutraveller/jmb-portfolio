@@ -191,6 +191,8 @@
   display: grid; grid-template-columns: 1fr 1fr;
   gap: var(--sp-4);
 }
+.case-image-pair > *,
+.case-image-triple > * { min-width: 0; }
 .case-image-pair .case-image { max-width: none; margin: 0; }
 
 /* ---- Figure (pair, triple, single) ---- */

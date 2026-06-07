@@ -105,6 +105,11 @@ if (form) {
     } catch {
       btn.disabled = false;
       btn.textContent = originalText;
+      const errMsg = form.querySelector('.form-error') || document.createElement('p');
+      errMsg.className = 'form-error';
+      errMsg.setAttribute('role', 'alert');
+      errMsg.textContent = 'Sem ligação à internet. Tenta novamente ou envia email directamente.';
+      if (!form.querySelector('.form-error')) form.appendChild(errMsg);
     }
   });
 }
