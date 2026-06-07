@@ -21,38 +21,59 @@ function setMenuState(open) {
 burger.addEventListener('click', () => setMenuState(!navLinks.classList.contains('open')));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenuState(false)));
 
-// Mensagem de sucesso após redirect do Formspree
-if (new URLSearchParams(window.location.search).get('enviado') === '1') {
-  const contact = document.getElementById('contacto');
-  if (contact) {
-    const msg = document.createElement('p');
-    msg.className = 'form-success';
-    msg.setAttribute('role', 'status');
-    msg.textContent = 'Mensagem enviada. Responderei em breve.';
-    contact.querySelector('.contact-form')?.before(msg);
-    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    history.replaceState(null, '', window.location.pathname);
-  }
-}
-
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  // Validação em tempo real
+  form.querySelectorAll('[required]').forEach(field => {
+    field.addEventListener('input', () => {
+      if (field.value.trim()) field.removeAttribute('aria-invalid');
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Validação
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
       if (!field.value.trim()) { field.setAttribute('aria-invalid', 'true'); valid = false; }
       else { field.removeAttribute('aria-invalid'); }
     });
     if (!valid) {
-      e.preventDefault();
       const first = form.querySelector('[aria-invalid="true"]');
       if (first) first.focus();
+      return;
     }
-  });
-  form.querySelectorAll('[required]').forEach(field => {
-    field.addEventListener('input', () => {
-      if (field.value.trim()) field.removeAttribute('aria-invalid');
-    });
+
+    // Envio via fetch — sem redirect para o Formspree
+    const btn = form.querySelector('[type="submit"]');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'A enviar…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        form.innerHTML = '<p class="form-success" role="status">Mensagem enviada. Responderei em breve.</p>';
+      } else {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        const errMsg = form.querySelector('.form-error') || document.createElement('p');
+        errMsg.className = 'form-error';
+        errMsg.setAttribute('role', 'alert');
+        errMsg.textContent = 'Ocorreu um erro. Tenta novamente ou envia email directamente.';
+        if (!form.querySelector('.form-error')) form.appendChild(errMsg);
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
   });
 }
 
