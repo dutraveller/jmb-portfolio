@@ -493,7 +493,7 @@ footer a:hover { text-decoration: underline; }
   .about-portrait-wrap { position: static; max-width: 260px; }
   .service-row { grid-template-columns: 2.5rem 1fr; }
   .service-tags { display: none; }
-  .work-grid { grid-template-columns: 1fr; gap: 1px; }
+  .work-grid { grid-template-columns: 1fr 1fr; }
   .contact-inner { grid-template-columns: 1fr; gap: var(--sp-12); }
   .process-list { grid-template-columns: 1fr; }
   .process-entry { padding: var(--sp-8) 0; }
@@ -524,6 +524,7 @@ footer a:hover { text-decoration: underline; }
   .process,
   .contact { padding: var(--sp-16) var(--sp-4); }
   .about-portrait-wrap { max-width: 180px; margin: 0 auto; }
+  .work-grid { grid-template-columns: 1fr; gap: 1px; }
   .hero-ctas { flex-wrap: wrap; }
   .skills-list { grid-template-columns: 1fr; }
   footer { padding: var(--sp-6) var(--sp-4); }
@@ -534,6 +535,7 @@ footer a:hover { text-decoration: underline; }
    ===================== */
 @media (hover: none) {
   .work-card-hint { opacity: 1; }
+  .case-figure-btn::after { opacity: 1; }
 }
 
 /* =====================

@@ -249,8 +249,13 @@
 }
 .case-image-triple .case-image { max-width: none; margin: 0; }
 
-@media (max-width: 700px) {
-  .case-image-pair  { grid-template-columns: 1fr; }
+/* Triple → 2 colunas em tablet */
+@media (max-width: 900px) {
+  .case-image-triple { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .case-image-pair   { grid-template-columns: 1fr; }
   .case-image-triple { grid-template-columns: 1fr; }
 }
 
@@ -378,10 +383,15 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 700px) {
-  .case-header { padding-bottom: var(--sp-12); }
+  .case-header { padding: calc(var(--nav-h) + var(--sp-10)) var(--sp-4) var(--sp-12); }
   .case-section { padding: var(--sp-12) var(--sp-4); }
   .case-image-wrap { padding: var(--sp-6) var(--sp-4) var(--sp-8); }
   .case-mini-break { padding: var(--sp-8) var(--sp-4); }
   .case-nav { padding: var(--sp-8) var(--sp-4); }
   .case-body { grid-template-columns: 1fr; gap: var(--sp-5); }
+  /* Lightbox: botão de fechar maior e modal com espaço no topo */
+  .img-modal { padding: var(--sp-12) var(--sp-3) var(--sp-3); align-items: flex-start; overflow-y: auto; }
+  .img-modal-inner { max-height: none; }
+  .img-modal-img { max-height: 75dvh; }
+  .img-modal-close { width: 44px; height: 44px; font-size: 1.1rem; top: calc(-1 * var(--sp-11)); }
 }
