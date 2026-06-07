@@ -21,6 +21,20 @@ function setMenuState(open) {
 burger.addEventListener('click', () => setMenuState(!navLinks.classList.contains('open')));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenuState(false)));
 
+// Mensagem de sucesso após redirect do Formspree
+if (new URLSearchParams(window.location.search).get('enviado') === '1') {
+  const contact = document.getElementById('contacto');
+  if (contact) {
+    const msg = document.createElement('p');
+    msg.className = 'form-success';
+    msg.setAttribute('role', 'status');
+    msg.textContent = 'Mensagem enviada. Responderei em breve.';
+    contact.querySelector('.contact-form')?.before(msg);
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    history.replaceState(null, '', window.location.pathname);
+  }
+}
+
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', (e) => {
