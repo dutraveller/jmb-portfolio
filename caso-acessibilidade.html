@@ -72,7 +72,9 @@
       <div class="case-image-wrap reveal">
         <div class="case-image-pair">
           <figure class="case-figure">
-            <img
+            <picture>
+              <source srcset="assets/images/a11y-web-issues-800.webp 800w, assets/images/a11y-web-issues.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
               src="assets/images/a11y-web-issues.png"
               alt="Interface web do sistema auditado: card de incidente com etiqueta de estado assinalada a vermelho, evidenciando dependência de cor e ausência de relação semântica entre labels e valores"
               width="640"
@@ -80,10 +82,13 @@
               loading="lazy"
               decoding="async"
             />
+            </picture>
             <figcaption>Dependência de cor e labels sem relação semântica — interface web</figcaption>
           </figure>
           <figure class="case-figure">
-            <img
+            <picture>
+              <source srcset="assets/images/a11y-mobile-screens-800.webp 800w, assets/images/a11y-mobile-screens.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
               src="assets/images/a11y-mobile-screens.png"
               alt="Dois ecrãs da aplicação mobile: detalhe de pedido com campos sobrepostos e ecrã inicial com estrutura de navegação — evidenciando ausência de hierarquia semântica e componentes sem nome acessível"
               width="640"
@@ -91,6 +96,7 @@
               loading="lazy"
               decoding="async"
             />
+            </picture>
             <figcaption>Ausência de hierarquia semântica e componentes sem nome acessível — app mobile</figcaption>
           </figure>
         </div>
