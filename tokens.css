@@ -12,7 +12,7 @@
   /* Text — light surfaces */
   --c-text-1:  oklch(17%  0.008 90);
   --c-text-2:  oklch(40%  0.010 90);
-  --c-text-3:  oklch(58%  0.008 90);
+  --c-text-3:  oklch(52%  0.008 90);
   --c-text-ph: oklch(72%  0.006 90);
   --c-text-inv: oklch(95%  0.018 90);
 
