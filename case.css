@@ -185,6 +185,12 @@
 /* ---- Image wrap variant (light bg continuation) ---- */
 .case-image-wrap--light { background: var(--c-page); }
 
+/* Portrait screenshots únicos — staging de galeria: imagem pequena num palco generoso */
+.case-image-wrap--portrait { padding-block: var(--sp-20); }
+
+/* Ritmo adjacente: secção que segue imagem já tem a imagem como separação visual */
+.case-image-wrap + .case-section { padding-block-start: var(--sp-16); }
+
 /* ---- Image pair (2 images side by side) ---- */
 .case-image-pair {
   max-width: 860px; margin: 0 auto;
@@ -237,7 +243,7 @@
 .case-mini-break {
   background: var(--c-page);
   border-top: 1px solid var(--c-border-strong);
-  padding: var(--sp-16) var(--sp-8) var(--sp-12);
+  padding: var(--sp-24) var(--sp-8) var(--sp-16);
 }
 .case-mini-break-inner { max-width: 860px; margin: 0 auto; }
 .case-mini-label {
@@ -401,7 +407,9 @@
   .case-header { padding: calc(var(--nav-h) + var(--sp-10)) var(--sp-4) var(--sp-12); }
   .case-section { padding: var(--sp-12) var(--sp-4); }
   .case-image-wrap { padding: var(--sp-6) var(--sp-4) var(--sp-8); }
-  .case-mini-break { padding: var(--sp-8) var(--sp-4); }
+  .case-image-wrap--portrait { padding-block: var(--sp-10); }
+  .case-image-wrap + .case-section { padding-block-start: var(--sp-10); }
+  .case-mini-break { padding: var(--sp-12) var(--sp-4) var(--sp-10); }
   .case-nav { padding: var(--sp-8) var(--sp-4); }
   .case-body { grid-template-columns: 1fr; gap: var(--sp-5); }
   /* Lightbox: botão de fechar maior e modal com espaço no topo */
