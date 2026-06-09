@@ -182,9 +182,9 @@ if (form) {
   update();
 }());
 
-// Problems list stagger (case study pages)
+// Problems list + case list + results list stagger (case study pages)
 (function () {
-  const lists = document.querySelectorAll('.case-problems-list');
+  const lists = document.querySelectorAll('.case-problems-list, .case-list, .case-results-list');
   if (!lists.length) return;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) { lists.forEach(l => l.classList.add('animated')); return; }

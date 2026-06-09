@@ -35,6 +35,7 @@
   font-weight: 800; line-height: 1.0;
   letter-spacing: -0.03em; color: var(--c-text-1);
   margin-bottom: var(--sp-8);
+  text-wrap: balance;
   opacity: 0;
   animation: slideUp 0.85s var(--ease) 0.3s forwards;
 }
@@ -74,6 +75,7 @@
   font-size: 1.0625rem; font-weight: 300;
   line-height: 1.75; color: var(--c-text-2);
   max-width: 60ch; margin-bottom: var(--sp-4);
+  hyphens: auto; overflow-wrap: break-word; text-wrap: pretty;
 }
 .case-content p:last-child { margin-bottom: 0; }
 .case-content p strong { color: var(--c-text-1); font-weight: 600; }
@@ -81,6 +83,7 @@
 .case-content .case-intro {
   font-size: 1.2rem; font-weight: 300;
   color: var(--c-text-1); line-height: 1.65;
+  text-wrap: pretty;
 }
 
 /* On dark sections */
@@ -232,6 +235,7 @@
   font-size: 0.8125rem;
   color: var(--c-text-3);
   line-height: 1.5;
+  text-wrap: pretty;
 }
 /* Single image centrada dentro do wrap */
 .case-figure--single {
@@ -255,6 +259,7 @@
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 800; line-height: 1.05;
   letter-spacing: -0.025em; color: var(--c-text-1);
+  text-wrap: balance;
 }
 .case-mini-em {
   font-family: var(--font-serif);
@@ -309,6 +314,27 @@
 .case-problems-list.animated li:nth-child(3) { transition-delay: 0.16s; }
 .case-problems-list.animated li:nth-child(4) { transition-delay: 0.24s; }
 .case-problems-list.animated li:nth-child(5) { transition-delay: 0.32s; }
+
+/* Case list + results list: stagger entrance */
+.case-list li,
+.case-results-list li {
+  transform: translateY(8px);
+  transition: transform 0.4s var(--ease);
+}
+.case-list.animated li,
+.case-results-list.animated li { transform: none; }
+.case-list.animated li:nth-child(1),
+.case-results-list.animated li:nth-child(1) { transition-delay: 0s; }
+.case-list.animated li:nth-child(2),
+.case-results-list.animated li:nth-child(2) { transition-delay: 0.06s; }
+.case-list.animated li:nth-child(3),
+.case-results-list.animated li:nth-child(3) { transition-delay: 0.12s; }
+.case-list.animated li:nth-child(4),
+.case-results-list.animated li:nth-child(4) { transition-delay: 0.18s; }
+.case-list.animated li:nth-child(5),
+.case-results-list.animated li:nth-child(5) { transition-delay: 0.24s; }
+.case-list.animated li:nth-child(6),
+.case-results-list.animated li:nth-child(6) { transition-delay: 0.30s; }
 
 /* ---- Lightbox trigger ---- */
 .case-figure-btn {
@@ -405,6 +431,7 @@
 /* ---- Responsive ---- */
 @media (max-width: 700px) {
   .case-header { padding: calc(var(--nav-h) + var(--sp-10)) var(--sp-4) var(--sp-12); }
+  .case-title { line-height: 1.15; } /* título multi-linha em mobile precisa de mais entrelinha */
   .case-section { padding: var(--sp-12) var(--sp-4); }
   .case-image-wrap { padding: var(--sp-6) var(--sp-4) var(--sp-8); }
   .case-image-wrap--portrait { padding-block: var(--sp-10); }
