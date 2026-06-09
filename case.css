@@ -195,12 +195,17 @@
 .case-image-triple > * { min-width: 0; }
 .case-image-pair .case-image { max-width: none; margin: 0; }
 
-/* Variante para screenshots mobile (portrait) */
+/* Variante para screenshots mobile (portrait) em par */
 .case-image-pair--mobile .case-figure img {
   width: auto;
   max-width: 100%;
   max-height: 560px;
   align-self: center;
+}
+
+/* Imagem única mobile — mesmo tamanho visual que as imagens em par */
+.case-figure--single-mobile {
+  max-width: 320px;
 }
 
 /* ---- Figure (pair, triple, single) ---- */
