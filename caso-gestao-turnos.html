@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX &amp; UI — Plataforma de Gestão de Turnos — José Maria Barros</title>
+  <meta name="description" content="UX e UI design para plataforma de gestão de turnos em ambiente industrial. Discovery com supervisores, fluxos complexos e dois paradigmas de interacção: web para gestão e app mobile para operadores." />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta name="theme-color" content="#0e1a10" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://josemariabarros.com/caso-gestao-turnos.html" />
+  <meta property="og:title" content="UX &amp; UI — Plataforma de Gestão de Turnos — José Maria Barros" />
+  <meta property="og:description" content="UX e UI design para plataforma de gestão de turnos em ambiente industrial. Discovery com supervisores, fluxos complexos e dois paradigmas de interacção: web para gestão e app mobile para operadores." />
+  <meta property="og:image" content="https://josemariabarros.com/assets/images/turnos-schedule-demand-2.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Serif+4:ital,opsz,wght@1,8..60,200..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <nav class="nav" aria-label="Navegação principal">
+    <a href="index.html" class="nav-logo" aria-label="José Maria Barros — início">
+      José Maria Barros<span class="nav-logo-dot" aria-hidden="true">.</span>
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="index.html#servicos">Serviços</a></li>
+      <li><a href="index.html#trabalho">Trabalho</a></li>
+      <li><a href="index.html#processo">Processo</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+        <rect width="20" height="2" fill="currentColor"/>
+        <rect y="6" width="20" height="2" fill="currentColor"/>
+        <rect y="12" width="20" height="2" fill="currentColor"/>
+      </svg>
+    </button>
+  </nav>
+  <div class="case-progress" aria-hidden="true"></div>
+
+  <main id="main-content">
+    <article>
+
+      <!-- HEADER -->
+      <header class="case-header">
+        <div class="case-header-inner">
+          <a href="index.html#trabalho" class="case-back">
+            <span aria-hidden="true">←</span> Casos de estudo
+          </a>
+          <p class="case-industry">Produto Industrial</p>
+          <h1 class="case-title">UX &amp;&nbsp;UI — Plataforma<br>de Gestão de Turnos</h1>
+          <div class="case-chips" aria-label="Informação do projeto">
+            <span class="case-chip">UX Design</span>
+            <span class="case-chip">UI Design</span>
+            <span class="case-chip">Discovery</span>
+            <span class="case-chip">Mobile</span>
+            <span class="case-chip">OutSystems</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTEXTO -->
+      <section class="case-section" aria-labelledby="ctx-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="ctx-title">Contexto</p>
+          </div>
+          <div class="case-content">
+            <p class="case-intro">Uma multinacional industrial precisava de digitalizar a gestão operacional de turnos e alocação de recursos humanos em ambiente de fábrica. O sistema tinha de servir <strong>dois perfis com necessidades radicalmente distintas</strong>: supervisores a gerir equipas, turnos e certificações em tempo real, e operadores ou estudantes a reservar turnos disponíveis a partir do telemóvel.</p>
+            <p>O produto foi desenvolvido em OutSystems e lançado em produção.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- O MEU PAPEL -->
+      <section class="case-section case-section--light" aria-labelledby="role-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="role-title">O meu papel</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-list" aria-label="Responsabilidades">
+              <li>Discovery com supervisores: identificação de dores, fluxos actuais e prioridades operacionais</li>
+              <li>Design de fluxos e interacções para plataforma web (desktop) e app mobile nativa</li>
+              <li>Apresentação e iteração de propostas com utilizadores e stakeholders</li>
+              <li>Defesa de decisões de interface com base em boas práticas de usabilidade</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESSO -->
+      <section class="case-section" aria-labelledby="process-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="process-title">Processo</p>
+          </div>
+          <div class="case-content">
+            <p>O projecto começou com conversas directas com supervisores para perceber como geriam turnos actualmente, onde perdiam mais tempo e quais as situações de maior pressão operacional.</p>
+            <p>Esse input definiu as prioridades de design: o dashboard do supervisor precisava de dar <strong>visibilidade imediata ao estado das equipas e turnos em aberto</strong>; o fluxo de criação de demanda tinha de ser resolvível em segundos, não em minutos; e a lógica de certificações por equipa tinha de estar activa por baixo sem aparecer como complexidade na interface.</p>
+            <p>As propostas foram apresentadas a supervisores e stakeholders em ciclos de iteração, com ajustes baseados em feedback real de quem ia usar o sistema no terreno.</p>
+            <p>Uma das decisões estratégicas do produto surgiu da necessidade de resolver a cobertura de ausências de forma escalável. Em vez de os supervisores contactarem individualmente possíveis suplentes, foi desenhado um <strong>mecanismo de pool</strong>: trabalhadores externos e estudantes inscrevem-se na plataforma com as suas certificações, e quando um supervisor cria uma demanda, o pedido é enviado automaticamente a todos os inscritos com as especialidades correspondentes. O primeiro a aceitar fica alocado. Esta lógica eliminou a dependência de contactos manuais e tornou o processo de cobertura previsível e auditável.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE — User Story Hugo -->
+      <div class="case-image-wrap reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-user-story-hugo-800.webp 800w, assets/images/turnos-user-story-hugo.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-user-story-hugo.png"
+              alt="User story do supervisor Hugo — pressão de tempo real como ponto de partida para decisões de design"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Cenário do supervisor — pressão de tempo real como ponto de partida para decisões de design</figcaption>
+        </figure>
+      </div>
+
+      <!-- DESAFIOS DE DESIGN -->
+      <section class="case-section case-section--light" aria-labelledby="challenges-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="challenges-title">Desafios<br>de design</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-list" aria-label="Desafios de design">
+              <li>Lógica de negócio complexa (certificações, equipas, códigos de turno, aprovações) que não podia aparecer como complexidade na interface</li>
+              <li>Dois paradigmas de interacção num mesmo sistema: desktop para planeamento e gestão, mobile para acções rápidas no terreno</li>
+              <li>Utilizadores com perfis e literacia digital muito distintos: supervisores experientes e operadores ou estudantes ocasionais</li>
+              <li>Estados críticos com consequências reais: cancelar uma demanda com trabalhadores já alocados exigia comunicação clara e prevenção de erro</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLATAFORMA WEB — SUPERVISOR -->
+      <div class="case-mini-break reveal">
+        <div class="case-mini-break-inner">
+          <p class="case-mini-label">Plataforma web</p>
+          <h2 class="case-mini-title">Interface do <em class="case-mini-em">Supervisor</em></h2>
+        </div>
+      </div>
+
+      <section class="case-section case-section--light" aria-labelledby="web-intro-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="web-intro-title">Fluxo central</p>
+          </div>
+          <div class="case-content">
+            <p>O fluxo central do produto é a criação de uma demanda de turno: o supervisor identifica uma necessidade, configura os parâmetros e disponibiliza o turno para os trabalhadores certificados. A interface teve de tornar esse processo <strong>imediato, mesmo com múltiplas variáveis em simultâneo</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE — Schedule vazio -->
+      <div class="case-image-wrap case-image-wrap--light reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-schedule-empty-800.webp 800w, assets/images/turnos-schedule-empty.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-schedule-empty.png"
+              alt="Estado inicial do schedule sem demandas criadas — acção principal visível e acessível"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Estado inicial do schedule — sem demandas criadas, acção principal visível e acessível</figcaption>
+        </figure>
+      </div>
+
+      <!-- IMAGE — Schedule com demanda 20:C -->
+      <div class="case-image-wrap reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-schedule-demand-1-800.webp 800w, assets/images/turnos-schedule-demand-1.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-schedule-demand-1.png"
+              alt="Após criação da primeira demanda — turno disponível para a equipa 20:C com slot e horário visíveis"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Após criação da primeira demanda — turno disponível para a equipa 20:C com slot e horário visíveis</figcaption>
+        </figure>
+      </div>
+
+      <!-- IMAGE — Schedule com demandas 20:C e 22:C -->
+      <div class="case-image-wrap case-image-wrap--light reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-schedule-demand-2-800.webp 800w, assets/images/turnos-schedule-demand-2.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-schedule-demand-2.png"
+              alt="Duas demandas criadas em simultâneo — visibilidade imediata do estado de cobertura por dia e equipa"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Duas demandas criadas em simultâneo — visibilidade imediata do estado de cobertura por dia e equipa</figcaption>
+        </figure>
+      </div>
+
+      <!-- IMAGE — Edit shift demand -->
+      <div class="case-image-wrap reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-edit-demand-800.webp 800w, assets/images/turnos-edit-demand.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-edit-demand.png"
+              alt="Formulário de edição de demanda — team license, slots, horário e extensão a outros supervisores num único ecrã"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Formulário de edição de demanda — team license, slots, horário e extensão a outros supervisores num único ecrã sem sobrecarga cognitiva</figcaption>
+        </figure>
+      </div>
+
+      <!-- IMAGE pair — Filters fechados + abertos -->
+      <div class="case-image-wrap case-image-wrap--light reveal">
+        <div class="case-image-pair">
+          <figure class="case-figure">
+            <picture>
+              <source srcset="assets/images/turnos-filters-closed-800.webp 800w, assets/images/turnos-filters-closed.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
+                src="assets/images/turnos-filters-closed.png"
+                alt="Painel de filtros fechado com opção de guardar selecção"
+                width="1440"
+                height="860"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Painel de filtros — opção de guardar selecção para supervisores com padrões recorrentes</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <picture>
+              <source srcset="assets/images/turnos-filters-open-800.webp 800w, assets/images/turnos-filters-open.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
+                src="assets/images/turnos-filters-open.png"
+                alt="Filtro por licença com código de cor por equipa — lógica de certificação tornada visível apenas onde é necessária"
+                width="1440"
+                height="860"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Filtro por licença com código de cor por equipa — certificação visível só onde é necessária</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- IMAGE — Warning modal -->
+      <div class="case-image-wrap reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-warning-modal-800.webp 800w, assets/images/turnos-warning-modal.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-warning-modal.png"
+              alt="Modal de confirmação de eliminação — linguagem directa, acção destrutiva em vermelho, acção segura à esquerda"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Modal de confirmação de eliminação — linguagem directa, acção destrutiva em vermelho, acção segura à esquerda</figcaption>
+        </figure>
+      </div>
+
+      <!-- APP MOBILE — OPERADOR -->
+      <div class="case-mini-break reveal">
+        <div class="case-mini-break-inner">
+          <p class="case-mini-label">App mobile</p>
+          <h2 class="case-mini-title">Interface do <em class="case-mini-em">Operador</em></h2>
+        </div>
+      </div>
+
+      <section class="case-section case-section--light" aria-labelledby="mobile-intro-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="mobile-intro-title">Contexto de uso</p>
+          </div>
+          <div class="case-content">
+            <p>A app foi desenhada para um contexto de uso completamente diferente: um operador ou estudante que consulta turnos disponíveis, reserva e recebe confirmação, <strong>tudo sem precisar de intervenção do supervisor</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE — User Story Connor -->
+      <div class="case-image-wrap case-image-wrap--light reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-user-story-connor-800.webp 800w, assets/images/turnos-user-story-connor.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-user-story-connor.png"
+              alt="Cenário do operador Connor — estudante a reservar turnos extra, com contexto de motivação e disponibilidade"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Cenário do operador — estudante a reservar turnos extra, com contexto de motivação e disponibilidade</figcaption>
+        </figure>
+      </div>
+
+      <!-- IMAGE pair — Dashboard empty + activo -->
+      <div class="case-image-wrap reveal">
+        <div class="case-image-pair">
+          <figure class="case-figure">
+            <picture>
+              <source srcset="assets/images/turnos-dashboard-empty-800.webp 800w, assets/images/turnos-dashboard-empty.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
+                src="assets/images/turnos-dashboard-empty.png"
+                alt="Dashboard sem turnos agendados — empty state com turnos disponíveis visíveis imediatamente abaixo"
+                width="720"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Empty state — turnos disponíveis visíveis imediatamente abaixo do estado vazio</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <picture>
+              <source srcset="assets/images/turnos-dashboard-active-800.webp 800w, assets/images/turnos-dashboard-active.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
+                src="assets/images/turnos-dashboard-active.png"
+                alt="Dashboard com turno confirmado — informação prioritária no hero, contexto secundário abaixo"
+                width="720"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Dashboard com turno confirmado — informação prioritária no hero, contexto secundário abaixo</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- IMAGE — Push notification -->
+      <div class="case-image-wrap case-image-wrap--light reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-push-notification-800.webp 800w, assets/images/turnos-push-notification.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-push-notification.png"
+              alt="Notificação push de turno disponível — sistema que actua fora da app para reduzir o tempo de resposta"
+              width="1440"
+              height="860"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Notificação de turno disponível — sistema que actua fora da app para reduzir o tempo de resposta</figcaption>
+        </figure>
+      </div>
+
+      <!-- IMAGE pair — Available shifts + Shift detail -->
+      <div class="case-image-wrap reveal">
+        <div class="case-image-pair">
+          <figure class="case-figure">
+            <picture>
+              <source srcset="assets/images/turnos-available-shifts-800.webp 800w, assets/images/turnos-available-shifts.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
+                src="assets/images/turnos-available-shifts.png"
+                alt="Vista semanal de turnos disponíveis — quota por período visível para orientar a decisão"
+                width="720"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Vista semanal de turnos disponíveis — quota por período visível para orientar a decisão</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <picture>
+              <source srcset="assets/images/turnos-shift-detail-800.webp 800w, assets/images/turnos-shift-detail.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+              <img
+                src="assets/images/turnos-shift-detail.png"
+                alt="Detalhe do turno antes de reservar — toda a informação necessária à decisão num único ecrã, CTA único"
+                width="720"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Detalhe do turno — toda a informação necessária num único ecrã, CTA único</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- IMAGE — Confirmação booking -->
+      <div class="case-image-wrap case-image-wrap--light reveal">
+        <figure class="case-figure case-figure--single">
+          <picture>
+            <source srcset="assets/images/turnos-booking-confirmation-800.webp 800w, assets/images/turnos-booking-confirmation.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
+            <img
+              src="assets/images/turnos-booking-confirmation.png"
+              alt="Feedback contextual após reserva — confirmação não intrusiva que não interrompe o fluxo"
+              width="720"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <figcaption>Feedback contextual após reserva — confirmação não intrusiva que não interrompe o fluxo</figcaption>
+        </figure>
+      </div>
+
+      <!-- RESULTADO -->
+      <section class="case-section case-section--dark" aria-labelledby="result-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="result-title">Resultado</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-results-list" aria-label="Resultados obtidos">
+              <li>Produto lançado em produção com dois pontos de contacto distintos mas coerentes</li>
+              <li>Lógica operacional complexa traduzida em fluxos que não exigem formação para serem usados</li>
+              <li>Mecanismo de pool que eliminou contactos manuais e tornou a cobertura de ausências previsível e auditável</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- O QUE ESTE PROJECTO DEMONSTRA -->
+      <section class="case-section" aria-labelledby="demonstrates-title">
+        <div class="case-body reveal">
+          <div class="case-lead">
+            <p class="section-label" id="demonstrates-title">O que este<br>projecto demonstra</p>
+          </div>
+          <div class="case-content">
+            <ul class="case-list" aria-label="Competências demonstradas">
+              <li>Discovery em contexto industrial: identificação de dores reais com supervisores antes de qualquer decisão de interface</li>
+              <li>Tradução de lógica operacional complexa em fluxos simples e accionáveis</li>
+              <li>Design para dois perfis e dois paradigmas de interacção num sistema coerente</li>
+              <li>Tratamento rigoroso de estados críticos: confirmações, consequências e prevenção de erro</li>
+              <li>Iteração com stakeholders e utilizadores com defesa fundamentada de decisões de usabilidade</li>
+              <li>Contribuição para a definição de modelo operacional: pool de trabalhadores como solução ao problema de cobertura de ausências</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Ver todos os casos de estudo">
+        <a href="index.html#trabalho" class="case-nav-link">
+          <span class="case-nav-label">Ver todos os casos</span>
+          <span class="case-nav-title">← Trabalho seleccionado</span>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2026 José Maria Barros · Lisboa, Portugal · <a href="mailto:josemariabarros@gmail.com">josemariabarros@gmail.com</a></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
