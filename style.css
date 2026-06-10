@@ -448,6 +448,7 @@ body {
   transition: border-color 0.2s var(--ease);
 }
 .form-input:focus { border-color: var(--c-green-200); }
+.form-input:focus-visible { outline: 2px solid var(--c-green-200); outline-offset: 2px; }
 .form-input::placeholder { color: oklch(95% 0.018 90 / 0.4); }
 .form-input[aria-invalid="true"] { border-color: var(--c-error-inv); }
 textarea.form-input { resize: vertical; min-height: 130px; }
