@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/a11y/keyboard_test.py*)",
+      "Bash(python scripts/a11y/at_tree.py*)"
+    ]
+  }
+}
