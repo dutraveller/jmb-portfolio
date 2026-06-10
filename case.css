@@ -339,6 +339,7 @@
 /* ---- Lightbox trigger ---- */
 .case-figure-btn {
   display: block; width: 100%;
+  min-height: 24px;
   padding: 0; border: none; background: none;
   cursor: zoom-in;
   border-radius: 6px;

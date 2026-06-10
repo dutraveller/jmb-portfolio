@@ -60,6 +60,7 @@ body {
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--c-text-3); text-decoration: none;
   transition: color 0.2s var(--ease);
+  padding-block: var(--sp-2);
 }
 .nav-links a:hover { color: var(--c-text-1); }
 .nav-burger {
@@ -466,7 +467,7 @@ footer {
   padding: var(--sp-8); text-align: center;
   font-size: 0.8125rem; font-weight: 300;
 }
-footer a { color: var(--c-green-200); text-decoration: none; }
+footer a { color: var(--c-green-200); text-decoration: none; display: inline-block; padding-block: 5px; }
 footer a:hover { text-decoration: underline; }
 
 /* =====================
