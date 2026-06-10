@@ -212,11 +212,6 @@
   align-self: center;
 }
 
-/* Imagem única mobile — mesmo tamanho visual que as imagens em par */
-.case-figure--single-mobile {
-  max-width: 320px;
-}
-
 /* ---- Figure (pair, triple, single) ---- */
 .case-figure {
   margin: 0;
@@ -241,6 +236,10 @@
 .case-figure--single {
   max-width: 860px;
   margin: 0 auto;
+}
+/* Variante portrait: imagem pequena num palco generoso (deve vir depois de --single) */
+.case-figure--single-mobile {
+  max-width: 320px;
 }
 
 /* ---- Mini-case chapter break ---- */
