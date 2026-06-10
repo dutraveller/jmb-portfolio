@@ -17,6 +17,8 @@ Uso:
 """
 import sys
 import warnings
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 from playwright.sync_api import sync_playwright
