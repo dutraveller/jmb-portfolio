@@ -406,15 +406,15 @@
 .img-modal-close {
   position: absolute; top: calc(-1 * var(--sp-10)); right: 0;
   width: 36px; height: 36px;
-  background: oklch(100% 0 0 / 0.12);
-  border: 1px solid oklch(100% 0 0 / 0.2);
+  background: oklch(12% 0 0 / 0.82);
+  border: 1px solid oklch(100% 0 0 / 0.25);
   border-radius: 50%;
   color: #fff; font-size: 1.25rem; line-height: 1;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.15s var(--ease);
 }
-.img-modal-close:hover { background: oklch(100% 0 0 / 0.22); }
+.img-modal-close:hover { background: oklch(22% 0 0 / 0.92); }
 .img-modal-close:focus-visible {
   outline: 3px solid var(--c-action);
   outline-offset: 3px;
@@ -443,5 +443,5 @@
   .img-modal { padding: var(--sp-12) var(--sp-3) var(--sp-3); align-items: flex-start; overflow-y: auto; }
   .img-modal-inner { max-height: none; }
   .img-modal-img { max-height: 75dvh; }
-  .img-modal-close { width: 44px; height: 44px; font-size: 1.1rem; top: calc(-1 * var(--sp-11)); }
+  .img-modal-close { position: fixed; top: var(--sp-4); right: var(--sp-4); width: 44px; height: 44px; font-size: 1.1rem; z-index: 902; }
 }
