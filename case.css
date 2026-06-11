@@ -4,7 +4,7 @@
 
 /* ---- Header ---- */
 .case-header {
-  background: var(--c-page);
+  background: var(--c-green-950);
   padding: calc(var(--nav-h) + var(--sp-16)) var(--sp-8) var(--sp-20);
 }
 .case-header-inner { max-width: 860px; margin: 0 auto; }
@@ -14,26 +14,26 @@
   min-height: var(--touch);
   font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--c-text-3); text-decoration: none;
+  color: var(--c-text-inv-3); text-decoration: none;
   margin-bottom: var(--sp-10);
   transition: color 0.2s var(--ease);
   opacity: 0;
   animation: slideUp 0.7s var(--ease) 0.1s forwards;
 }
-.case-back:hover { color: var(--c-action); }
+.case-back:hover { color: var(--c-text-inv); }
 
 .case-industry {
   font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--c-action); margin-bottom: var(--sp-3);
+  color: var(--c-green-200); margin-bottom: var(--sp-3);
   opacity: 0;
   animation: slideUp 0.7s var(--ease) 0.2s forwards;
 }
 
 .case-title {
-  font-size: clamp(2.2rem, 6vw, 5rem);
-  font-weight: 800; line-height: 1.0;
-  letter-spacing: -0.03em; color: var(--c-text-1);
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 800; line-height: 0.93;
+  letter-spacing: -0.03em; color: var(--c-text-inv);
   margin-bottom: var(--sp-8);
   text-wrap: balance;
   opacity: 0;
@@ -49,8 +49,8 @@
   font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.06em;
   padding: var(--sp-2) var(--sp-4); border-radius: 2px;
-  border: 1px solid var(--c-border-strong);
-  color: var(--c-text-2);
+  border: 1px solid var(--c-border-inv);
+  color: var(--c-text-inv-2);
 }
 
 /* ---- Sections ---- */
@@ -156,7 +156,7 @@
   display: flex; align-items: center; justify-content: center;
 }
 .case-image-label {
-  font-family: var(--font-serif); font-style: italic;
+  font-family: var(--font-sans); font-style: italic;
   font-size: 1rem; color: var(--c-text-3);
 }
 
@@ -261,7 +261,7 @@
   text-wrap: balance;
 }
 .case-mini-em {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic; font-weight: 300;
   color: var(--c-action);
 }
@@ -290,7 +290,7 @@
 .case-progress {
   position: fixed; top: var(--nav-h); left: 0;
   width: 100%; height: 2px; z-index: 99;
-  background: var(--c-action);
+  background: var(--c-green-200);
   transform: scaleX(0); transform-origin: left center;
   pointer-events: none;
 }

@@ -3,17 +3,17 @@
    ===================== */
 :root {
   /* Surface */
-  --c-page:          oklch(97.5% 0.006 90);
-  --c-subtle:        oklch(93.5% 0.007 90);
-  --c-elevated:      oklch(99%   0.003 90);
-  --c-border:        oklch(87%   0.008 90);
-  --c-border-strong: oklch(72%   0.010 90);
+  --c-page:          oklch(95.5% 0.012 83);
+  --c-subtle:        oklch(91.5% 0.016 83);
+  --c-elevated:      oklch(97.5% 0.007 83);
+  --c-border:        oklch(84%   0.014 83);
+  --c-border-strong: oklch(68%   0.014 83);
 
   /* Text — light surfaces */
-  --c-text-1:  oklch(17%  0.008 90);
-  --c-text-2:  oklch(40%  0.010 90);
-  --c-text-3:  oklch(52%  0.008 90);
-  --c-text-ph: oklch(72%  0.006 90);
+  --c-text-1:  oklch(17%  0.010 83);
+  --c-text-2:  oklch(40%  0.012 83);
+  --c-text-3:  oklch(52%  0.010 83);
+  --c-text-ph: oklch(72%  0.007 83);
   --c-text-inv: oklch(95%  0.018 90);
 
   /* Text — dark green surfaces (--c-green-900 / --c-green-950) */
@@ -25,9 +25,9 @@
   --c-surface-inv-hover:  oklch(95% 0.018 90 / 0.07); /* interactive hover */
   --c-surface-inv-subtle: oklch(95% 0.018 90 / 0.05); /* subtle fill */
 
-  /* Navigation glass */
-  --c-nav-bg:             oklch(97.5% 0.006 90 / 0.93);
-  --c-nav-bg-open:        oklch(97.5% 0.006 90 / 0.98);
+  /* Navigation — dark */
+  --c-nav-bg:      oklch(19% 0.09 142);
+  --c-nav-bg-open: oklch(19% 0.09 142);
 
   /* Error on dark surfaces */
   --c-error-inv:          oklch(65% 0.17 25);
@@ -50,8 +50,7 @@
   --c-error:         oklch(47% 0.19   25);
 
   /* Typography */
-  --font-sans:  'Bricolage Grotesque', system-ui, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Libre Franklin', system-ui, sans-serif;
 
   /* Spacing scale */
   --sp-1:  0.25rem; --sp-2:  0.5rem;  --sp-3:  0.75rem;
