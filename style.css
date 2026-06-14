@@ -555,6 +555,11 @@ footer {
   }
   html { scroll-behavior: auto; }
   .nav-logo-dot { animation: none; }
+  .sine-deco { display: none; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .sine-deco path { stroke: oklch(90% 0.003 83); }
 }
 
 /* =====================
