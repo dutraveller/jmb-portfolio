@@ -50,7 +50,9 @@
   --c-error:         oklch(47% 0.19   25);
 
   /* Typography */
-  --font-sans: 'Libre Franklin', system-ui, sans-serif;
+  --font-display: 'Big Shoulders Display', system-ui, sans-serif;
+  --font-sans:    'Instrument Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
 
   /* Spacing scale */
   --sp-1:  0.25rem; --sp-2:  0.5rem;  --sp-3:  0.75rem;

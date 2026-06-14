@@ -18,7 +18,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="tokens.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -31,9 +31,9 @@
       José Maria Barros<span class="nav-logo-dot" aria-hidden="true">.</span>
     </a>
     <ul class="nav-links" id="nav-links" role="list">
-      <li><a href="#sobre">Sobre</a></li>
       <li><a href="#trabalho">Trabalho</a></li>
       <li><a href="#processo">Processo</a></li>
+      <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <button class="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
@@ -53,61 +53,61 @@
         <div class="hero-content">
           <h1 class="hero-title" id="hero-title">
             Interfaces que<br>
-            <em class="hero-em">funcionam.</em><br>
-            Design Systems que <em class="hero-em">escalam.</em>
+            funcionam.<br>
+            Design Systems<br>
+            que escalam.
           </h1>
-          <div class="hero-base">
-            <p class="hero-desc">Trabalho com equipas que precisam de organizar o design, melhorar a experiência ou preparar o produto para escalar. UX, design systems multi-brand e IA aplicada ao processo. Do diagnóstico à entrega, com acessibilidade integrada.</p>
-            <div class="hero-ctas">
-              <a href="#trabalho" class="btn btn-primary">Ver trabalho</a>
-              <a href="#contacto" class="btn btn-ghost">Falar comigo</a>
-            </div>
-          </div>
+          <p class="hero-desc">Trabalho com equipas que precisam de organizar o design, melhorar a experiência ou preparar o produto para escalar. UX, Design Systems e IA aplicada.</p>
         </div>
         <div class="hero-portrait" aria-hidden="true">
-          <div class="hero-portrait-placeholder">ilustração em breve</div>
+          <div class="hero-portrait-placeholder"></div>
         </div>
+        <p class="hero-scroll" aria-hidden="true">scroll para explorar<br><span>↓</span></p>
       </div>
     </section>
 
+    <!-- SINE A -->
+    <div class="sine-deco" aria-hidden="true">
+      <svg width="100%" viewBox="0 0 1440 125" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.23" d="M0 32C63 17 179 17 242 32C305 47 422 47 485 32C527 12 604 12 646 32C687 52 764 52 806 32C855 17 946 17 995 32C1044 47 1135 47 1184 32C1233 13 1323 13 1373 32C1422 51 1512 51 1562 32C1622 22 1734 22 1795 32C1856 42 1968 42 2028 32" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.5 14"/>
+        <path opacity="0.33" d="M0 47C27 38 76 38 103 47C130 56 179 56 206 47C242 38 309 38 346 47C382 56 449 56 485 47C538 42 636 42 690 47C743 52 841 52 894 47C950 33 1052 33 1108 47C1163 61 1266 61 1321 47C1371 40 1462 40 1512 47C1561 54 1652 54 1702 47C1744 30 1823 30 1865 47C1908 64 1986 64 2029 47" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.5 14"/>
+        <path opacity="0.29" d="M0 62C31 50 88 50 118 62C149 74 206 74 237 62C281 40 364 40 409 62C454 84 536 84 581 62C612 55 670 55 702 62C733 69 791 69 822 62C872 44 963 44 1012 62C1061 80 1152 80 1201 62C1245 48 1327 48 1371 62C1415 76 1496 76 1540 62C1571 49 1629 49 1660 62C1691 75 1748 75 1780 62" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.8 7"/>
+        <path opacity="0.68" d="M0 77C43 65 123 65 166 77C209 89 289 89 332 77C375 57 454 57 496 77C539 97 618 97 660 77C710 63 801 63 850 77C899 91 990 91 1040 77C1097 70 1200 70 1257 77C1314 84 1417 84 1474 77C1531 70 1634 70 1691 77C1748 84 1851 84 1908 77" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round"/>
+      </svg>
+    </div>
+
     <!-- ABOUT -->
     <section class="about" id="sobre" aria-labelledby="sobre-title">
-      <div class="about-grid">
-        <div class="about-portrait-wrap">
-          <div class="about-portrait">
-            <picture>
-              <source srcset="assets/images/jose-maria-barros-800.webp 800w, assets/images/jose-maria-barros.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
-              <img
-              src="assets/images/jose-maria-barros.png"
-              alt="José Maria Barros — Principal UX &amp; Product Designer, Lisboa"
-              width="480"
-              height="600"
-              loading="eager"
-              decoding="async"
-            />
-            </picture>
-          </div>
-        </div>
+      <div class="about-inner">
+        <p class="section-crumb reveal"><span class="crumb-mono">• 00 SOBRE</span><span class="crumb-sep" aria-hidden="true"> | </span><span class="crumb-label">SOBRE</span></p>
+        <h2 class="about-title reveal" id="sobre-title">Craft, sistema<br>e impacto real.</h2>
         <div class="about-text">
-          <div class="reveal">
-            <h2 class="section-title" id="sobre-title">Craft, sistema<br>e impacto real.</h2>
-          </div>
-          <p>Sou um <strong>Principal UX / Product Designer</strong> com mais de 15 anos de experiência em UX, UI, front-end e produto digital. O meu trabalho centra-se na interseção entre design, produto e tecnologia.</p>
-          <div class="about-quote">
+          <p class="reveal">Sou um <strong>Principal UX / Product Designer</strong> com mais de 15 anos de experiência em UX, UI, front-end e produto digital. O meu trabalho centra-se na intersecção entre design, produto e tecnologia.</p>
+          <div class="about-quote reveal">
+            <span class="quote-mark" aria-hidden="true">"</span>
             <p>Design bem feito não é um extra. É o que separa produto que retém de produto que frustra.</p>
           </div>
-          <p>Background técnico sólido em <strong>HTML, CSS e JavaScript</strong>. Responsável por auditorias WCAG que resultaram na correção de mais de <strong><span class="count-target" data-target="1000" aria-label="1 000">1&nbsp;000</span> issues de acessibilidade</strong> em múltiplos sistemas reais.</p>
+          <p class="reveal">Background técnico sólido em <strong>HTML, CSS e JavaScript</strong>. Responsável por auditorias WCAG que resultaram na correção de mais de <strong><span class="count-target" data-target="1000" aria-label="1 000">1&nbsp;000</span> issues de acessibilidade</strong> em múltiplos sistemas reais.</p>
           <ul class="skills-list reveal" aria-label="Áreas de especialidade">
             <li>Design Systems (Figma Variables)</li>
+            <li>Acessibilidade WCAG 2.2 / EAA 2025</li>
             <li>AI-assisted design workflow</li>
+            <li>Alinhamento design–engineering</li>
             <li>UX Research aplicado</li>
             <li>Prototipagem e validação</li>
-            <li>Acessibilidade WCAG 2.2 / EAA 2025</li>
-            <li>Alinhamento design–engineering</li>
           </ul>
         </div>
       </div>
     </section>
+
+    <!-- SINE B -->
+    <div class="sine-deco" aria-hidden="true">
+      <svg width="100%" viewBox="0 0 1440 105" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.33" d="M0 25C47 16 133 16 179 25C226 34 312 34 359 25C397 18 469 18 507 25C546 32 618 32 656 25C688 10 746 10 777 25C809 40 867 40 898 25C932 18 993 18 1026 25C1059 32 1121 32 1154 25C1202 10 1291 10 1340 25C1388 40 1477 40 1525 25C1558 19 1617 19 1649 25C1681 31 1740 31 1773 25" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.5 14"/>
+        <path opacity="0.33" d="M0 43C21 32 60 32 81 43C102 54 141 54 162 43C189 34 240 34 267 43C294 52 345 52 372 43C394 39 435 39 456 43C478 47 519 47 541 43C559 27 592 27 609 43C627 59 660 59 678 43C694 31 725 31 741 43C757 55 788 55 804 43C828 26 873 26 898 43C922 60 967 60 992 43C1019 38 1068 38 1095 43C1122 48 1172 48 1199 43C1225 30 1274 30 1300 43C1326 56 1374 56 1400 43C1418 26 1452 26 1470 43C1488 60 1521 60 1539 43C1556 32 1586 32 1603 43C1620 54 1651 54 1668 43" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.5 14"/>
+        <path opacity="0.26" d="M0 61C29 54 82 54 111 61C140 68 193 68 222 61C255 57 316 57 349 61C382 65 442 65 475 61C509 52 571 52 604 61C638 70 700 70 733 61C763 58 819 58 849 61C880 64 935 64 966 61C984 53 1018 53 1036 61C1055 69 1089 69 1107 61C1130 51 1171 51 1194 61C1217 71 1258 71 1281 61" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.8 7"/>
+      </svg>
+    </div>
 
     <!-- SERVICES (oculto — preservado para uso futuro)
     <section class="services" id="servicos" aria-labelledby="servicos-title">
@@ -161,9 +161,8 @@
     <!-- WORK -->
     <section class="work" id="trabalho" aria-labelledby="trabalho-title">
       <div class="work-inner">
-        <div class="reveal">
-          <h2 class="work-title" id="trabalho-title">Últimos trabalhos seleccionados</h2>
-        </div>
+        <p class="section-crumb reveal"><span class="crumb-mono">• 01 TRABALHO</span><span class="crumb-sep" aria-hidden="true"> | </span><span class="crumb-label">SELECÇÃO</span></p>
+        <h2 class="work-title reveal" id="trabalho-title">Últimos trabalhos<br>seleccionados</h2>
         <div class="work-grid">
           <a href="caso-multibrand.html" class="work-card reveal" aria-label="Ver caso de estudo: Design System Multi-brand">
             <div class="work-thumb">
@@ -249,36 +248,57 @@
       </div>
     </section>
     
+    <!-- SINE C -->
+    <div class="sine-deco" aria-hidden="true">
+      <svg width="100%" viewBox="0 0 1440 145" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.29" d="M0 30C38 15 107 15 145 30C183 45 252 45 290 30C344 18 444 18 498 30C553 42 653 42 707 30C733 17 783 17 809 30C836 43 885 43 912 30C951 14 1022 14 1061 30C1100 46 1171 46 1210 30C1253 6 1332 6 1375 30C1418 54 1497 54 1540 30C1583 13 1663 13 1707 30C1750 47 1830 47 1874 30" stroke="#1a1a1a" stroke-width="0.85"/>
+        <path opacity="0.65" d="M0 42C36 33 103 33 140 42C176 51 243 51 279 42C305 27 351 27 377 42C402 57 448 57 474 42C506 34 566 34 599 42C631 50 691 50 724 42C751 32 802 32 829 42C856 52 907 52 934 42C966 35 1026 35 1058 42C1090 49 1149 49 1181 42C1208 38 1259 38 1286 42C1313 46 1364 46 1391 42C1420 31 1472 31 1500 42C1528 53 1580 53 1609 42C1659 32 1752 32 1803 42C1853 52 1947 52 1997 42" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.5 14"/>
+        <path opacity="0.34" d="M0 54C53 44 151 44 205 54C258 64 356 64 409 54C469 40 579 40 639 54C699 68 809 68 869 54C923 40 1022 40 1076 54C1130 68 1230 68 1284 54C1321 38 1389 38 1426 54C1463 70 1531 70 1568 54C1610 50 1688 50 1730 54C1772 59 1849 59 1892 54" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.8 7"/>
+        <path opacity="0.11" d="M0 66C32 54 91 54 123 66C155 78 214 78 246 66C266 40 303 40 323 66C343 92 380 92 400 66C427 55 478 55 505 66C532 77 583 77 610 66C646 52 712 52 748 66C784 80 850 80 886 66C930 46 1011 46 1054 66C1098 86 1179 86 1223 66C1243 56 1280 56 1300 66C1320 76 1357 76 1377 66C1410 45 1469 45 1501 66C1533 87 1592 87 1624 66C1643 57 1678 57 1697 66C1715 75 1750 75 1769 66" stroke="#1a1a1a" stroke-width="0.85"/>
+        <path opacity="0.10" d="M0 78C48 64 137 64 185 78C233 92 321 92 369 78C405 56 471 56 507 78C542 100 608 100 644 78C693 65 783 65 831 78C880 91 970 91 1018 78C1060 63 1137 63 1179 78C1221 93 1298 93 1339 78C1393 46 1493 46 1547 78C1601 110 1700 110 1754 78C1804 54 1896 54 1945 78C1995 102 2087 102 2137 78" stroke="#1a1a1a" stroke-width="0.85"/>
+      </svg>
+    </div>
+
     <!-- PROCESS -->
     <section class="process" id="processo" aria-labelledby="processo-title">
       <div class="process-inner">
-        <div class="reveal">
-          <h2 class="section-title" id="processo-title">Processo</h2>
+        <p class="section-crumb reveal"><span class="crumb-mono">02</span><span class="crumb-label">METODOLOGIA</span></p>
+        <div class="process-timeline reveal" role="list" aria-label="Fases do processo">
+          <div class="process-rail" aria-hidden="true"></div>
+          <div class="process-steps">
+            <div class="process-step" role="listitem">
+              <span class="step-num" aria-hidden="true">01</span>
+              <h3 class="step-title" id="processo-title">Descoberta</h3>
+              <p class="step-desc">Entender o problema real antes de qualquer solução.</p>
+            </div>
+            <div class="process-step" role="listitem">
+              <span class="step-num" aria-hidden="true">02</span>
+              <h3 class="step-title">Definição</h3>
+              <p class="step-desc">Síntese do research em insights acionáveis.</p>
+            </div>
+            <div class="process-step" role="listitem">
+              <span class="step-num" aria-hidden="true">03</span>
+              <h3 class="step-title">Design</h3>
+              <p class="step-desc">Wireframes e protótipos de alta fidelidade.</p>
+            </div>
+            <div class="process-step" role="listitem">
+              <span class="step-num" aria-hidden="true">04</span>
+              <h3 class="step-title">Entrega</h3>
+              <p class="step-desc">Handoff rigoroso para engenharia e documentação.</p>
+            </div>
+          </div>
         </div>
-        <ol class="process-list" aria-label="Fases do processo">
-          <li class="process-entry reveal">
-            <span class="process-n">01</span>
-            <h3 class="process-entry-title">Descoberta</h3>
-            <p class="process-entry-desc">Entender o problema real antes de qualquer solução. Entrevistas, análise de contexto e objetivos mensuráveis.</p>
-          </li>
-          <li class="process-entry reveal">
-            <span class="process-n">02</span>
-            <h3 class="process-entry-title">Definição</h3>
-            <p class="process-entry-desc">Síntese do research em insights acionáveis. Personas, journey maps e definição clara do problema.</p>
-          </li>
-          <li class="process-entry reveal">
-            <span class="process-n">03</span>
-            <h3 class="process-entry-title">Design</h3>
-            <p class="process-entry-desc">Wireframes e protótipos de alta fidelidade. Iteração com validação de utilizadores e stakeholders.</p>
-          </li>
-          <li class="process-entry reveal">
-            <span class="process-n">04</span>
-            <h3 class="process-entry-title">Entrega</h3>
-            <p class="process-entry-desc">Handoff rigoroso para engenharia, documentação completa. Acessibilidade verificada em cada entrega.</p>
-          </li>
-        </ol>
       </div>
     </section>
+
+    <!-- SINE D -->
+    <div class="sine-deco" aria-hidden="true">
+      <svg width="100%" viewBox="0 0 1440 119" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.12" d="M0 27C51 20 146 20 197 27C249 34 343 34 395 27C440 10 523 10 569 27C614 44 697 44 742 27C792 19 884 19 933 27C983 35 1074 35 1124 27C1162 9 1233 9 1271 27C1310 45 1380 45 1418 27C1450 21 1508 21 1540 27C1572 33 1630 33 1661 27C1713 21 1809 21 1861 27C1912 33 2008 33 2060 27" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.8 7"/>
+        <path opacity="0.09" d="M0 43C27 36 78 36 105 43C132 50 182 50 210 43C247 29 317 29 354 43C392 57 462 57 499 43C529 29 585 29 615 43C645 57 701 57 731 43C770 34 842 34 881 43C920 52 992 52 1031 43C1064 25 1124 25 1156 43C1189 61 1249 61 1282 43C1324 30 1401 30 1443 43C1485 56 1562 56 1604 43C1633 33 1687 33 1715 43C1744 53 1798 53 1826 43" stroke="#1a1a1a" stroke-width="0.85"/>
+        <path opacity="0.38" d="M0 59C41 48 116 48 156 59C197 70 272 70 313 59C346 40 408 40 442 59C476 78 537 78 571 59C603 46 662 46 695 59C727 72 786 72 818 59C841 52 882 52 905 59C928 66 969 66 992 59C1031 48 1102 48 1141 59C1179 70 1251 70 1290 59C1310 41 1348 41 1368 59C1389 77 1427 77 1447 59C1481 43 1548 43 1582 59C1616 75 1683 75 1717 59" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.8 7"/>
+      </svg>
+    </div>
 
     <!-- CONTACT -->
     <section class="contact" id="contacto" aria-labelledby="contacto-title">
@@ -334,6 +354,15 @@
     </section>
 
   </main>
+
+  <!-- SINE E -->
+  <div class="sine-deco" aria-hidden="true">
+    <svg width="100%" viewBox="0 0 1440 90" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.16" d="M0 30C37 23 106 23 143 30C181 37 250 37 287 30C328 18 406 18 447 30C488 42 566 42 607 30C643 19 711 19 747 30C784 41 851 41 888 30C921 19 982 19 1015 30C1048 41 1109 41 1142 30C1189 12 1277 12 1324 30C1371 48 1459 48 1506 30C1540 19 1602 19 1635 30C1668 41 1730 41 1763 30" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round"/>
+      <path opacity="0.08" d="M0 47C48 40 138 40 186 47C234 54 323 54 371 47C415 40 498 40 542 47C586 54 668 54 712 47C745 37 806 37 838 47C871 57 932 57 964 47C1000 37 1063 37 1099 47C1134 57 1197 57 1233 47C1271 40 1333 40 1371 47C1409 54 1470 54 1508 47C1539 40 1595 40 1626 47C1656 54 1713 54 1743 47" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.5 14"/>
+      <path opacity="0.27" d="M0 64C34 57 96 57 131 64C165 71 227 71 261 64C288 50 335 50 362 64C390 78 437 78 464 64C490 53 533 53 560 64C587 75 630 75 657 64C687 54 732 54 762 64C791 74 836 74 866 64C895 47 946 47 975 64C1004 81 1055 81 1084 64C1111 49 1156 49 1183 64C1210 79 1254 79 1281 64C1308 50 1350 50 1377 64C1404 78 1446 78 1473 64" stroke="#1a1a1a" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.8 7"/>
+    </svg>
+  </div>
 
   <footer role="contentinfo">
     <p>© 2026 José Maria Barros · Lisboa, Portugal · <a href="mailto:josemariabarros@gmail.com">josemariabarros@gmail.com</a></p>
