@@ -52,8 +52,8 @@
   font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.06em;
   padding: var(--sp-2) var(--sp-4); border-radius: 2px;
-  border: 1px solid var(--c-border-inv);
-  color: var(--c-text-inv-2);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-3);
 }
 
 /* ---- Sections ---- */
@@ -149,15 +149,15 @@ article { counter-reset: cs -1; }
   color: var(--c-text-2); margin-top: var(--sp-2);
 }
 
-/* ---- Results list (dark bg) ---- */
+/* ---- Results list ---- */
 .case-results-list { list-style: none; padding: 0; }
 .case-results-list li {
   font-size: 1.0625rem; font-weight: 300;
-  line-height: 1.7; color: var(--c-text-inv-2);
+  line-height: 1.7; color: var(--c-text-2);
   padding: var(--sp-4) 0;
-  border-bottom: 1px solid var(--c-border-inv);
+  border-bottom: 1px solid var(--c-border);
 }
-.case-results-list li:first-child { border-top: 1px solid var(--c-border-inv); }
+.case-results-list li:first-child { border-top: 1px solid var(--c-border); }
 
 /* ---- Image placeholder ---- */
 .case-image-wrap {
