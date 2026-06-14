@@ -156,11 +156,17 @@ body {
   width: 100%; max-width: 420px;
   object-fit: cover; display: block;
 }
-.hero-portrait-placeholder {
+.hero-portrait-img {
   width: 100%;
   aspect-ratio: 3/4;
-  background: var(--c-subtle);
+  object-fit: cover;
+  display: block;
   border-radius: 2px;
+}
+.hero-portrait-img[src=""],
+.hero-portrait-img:not([src]) {
+  background: var(--c-subtle);
+  visibility: hidden;
 }
 .hero-scroll {
   grid-column: 1; grid-row: 2;
@@ -496,7 +502,6 @@ footer {
   display: flex; align-items: center; justify-content: space-between;
   gap: var(--sp-4);
 }
-.footer-coords,
 .footer-copy {
   font-family: var(--font-mono);
   font-size: 0.6875rem; font-weight: 400;
