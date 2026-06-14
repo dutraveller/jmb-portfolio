@@ -4,8 +4,9 @@
 
 /* ---- Header ---- */
 .case-header {
-  background: var(--c-green-950);
+  background: var(--c-page);
   padding: calc(var(--nav-h) + var(--sp-16)) var(--sp-8) var(--sp-20);
+  border-bottom: 1px solid var(--c-border);
 }
 .case-header-inner { max-width: 860px; margin: 0 auto; }
 
@@ -25,7 +26,7 @@
 .case-industry {
   font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--c-green-200); margin-bottom: var(--sp-3);
+  color: var(--c-text-3); margin-bottom: var(--sp-3);
   opacity: 0;
   animation: slideUp 0.7s var(--ease) 0.2s forwards;
 }
@@ -33,7 +34,7 @@
 .case-title {
   font-size: clamp(2.5rem, 8vw, 7rem);
   font-weight: 800; line-height: 0.93;
-  letter-spacing: -0.03em; color: var(--c-text-inv);
+  letter-spacing: -0.03em; color: var(--c-text-1);
   margin-bottom: var(--sp-8);
   text-wrap: balance;
   opacity: 0;
@@ -56,7 +57,7 @@
 /* ---- Sections ---- */
 .case-section { padding: var(--sp-20) var(--sp-8); background: var(--c-subtle); }
 .case-section--light { background: var(--c-page); }
-.case-section--dark  { background: var(--c-green-900); }
+.case-section--dark  { background: var(--c-subtle); }
 
 /* ---- Body grid: label | content ---- */
 .case-body {
@@ -68,7 +69,7 @@
 }
 .case-lead { padding-top: 0.15em; }
 .case-lead .section-label { line-height: 1.5; }
-.case-section--dark .section-label { color: var(--c-green-200); }
+.case-section--dark .section-label { color: var(--c-action); }
 
 /* ---- Content typography ---- */
 .case-content p {
@@ -86,9 +87,9 @@
   text-wrap: pretty;
 }
 
-/* On dark sections */
-.case-section--dark .case-content p { color: var(--c-text-inv-2); }
-.case-section--dark .case-content p strong { color: var(--c-text-inv); }
+/* case-section--dark is now subtle, inherits standard text colors */
+.case-section--dark .case-content p { color: var(--c-text-2); }
+.case-section--dark .case-content p strong { color: var(--c-text-1); }
 
 /* ---- General list (role, demonstrates) ---- */
 .case-list { list-style: none; padding: 0; }
@@ -290,7 +291,7 @@
 .case-progress {
   position: fixed; top: var(--nav-h); left: 0;
   width: 100%; height: 2px; z-index: 99;
-  background: var(--c-green-200);
+  background: var(--c-action);
   transform: scaleX(0); transform-origin: left center;
   pointer-events: none;
 }

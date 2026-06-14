@@ -3,49 +3,49 @@
    ===================== */
 :root {
   /* Surface */
-  --c-page:          oklch(95.5% 0.012 83);
-  --c-subtle:        oklch(91.5% 0.016 83);
-  --c-elevated:      oklch(97.5% 0.007 83);
-  --c-border:        oklch(84%   0.014 83);
-  --c-border-strong: oklch(68%   0.014 83);
+  --c-page:          oklch(98.5% 0.003 83);
+  --c-subtle:        oklch(96%   0.004 83);
+  --c-elevated:      oklch(100%  0     0);
+  --c-border:        oklch(88%   0.003 83);
+  --c-border-strong: oklch(72%   0.003 83);
 
   /* Text — light surfaces */
-  --c-text-1:  oklch(17%  0.010 83);
-  --c-text-2:  oklch(40%  0.012 83);
-  --c-text-3:  oklch(52%  0.010 83);
-  --c-text-ph: oklch(72%  0.007 83);
-  --c-text-inv: oklch(95%  0.018 90);
+  --c-text-1:  oklch(8%  0 0);
+  --c-text-2:  oklch(38% 0 0);
+  --c-text-3:  oklch(55% 0 0);
+  --c-text-ph: oklch(72% 0 0);
+  --c-text-inv: oklch(8%  0 0);
 
-  /* Text — dark green surfaces (--c-green-900 / --c-green-950) */
-  --c-text-inv-2:         oklch(95% 0.018 90 / 0.65);
-  --c-text-inv-3:         oklch(95% 0.018 90 / 0.5);
+  /* Secondary text — overlaps with text-1/2/3, kept for smooth CSS inheritance */
+  --c-text-inv-2:         oklch(8% 0 0 / 0.65);
+  --c-text-inv-3:         oklch(8% 0 0 / 0.50);
 
-  /* Surfaces & borders — dark green surfaces */
-  --c-border-inv:         oklch(95% 0.018 90 / 0.10); /* dividers */
-  --c-surface-inv-hover:  oklch(95% 0.018 90 / 0.07); /* interactive hover */
-  --c-surface-inv-subtle: oklch(95% 0.018 90 / 0.05); /* subtle fill */
+  /* Surfaces & borders */
+  --c-border-inv:         oklch(8% 0 0 / 0.10);
+  --c-surface-inv-hover:  oklch(8% 0 0 / 0.04);
+  --c-surface-inv-subtle: oklch(8% 0 0 / 0.02);
 
-  /* Navigation — dark */
-  --c-nav-bg:      oklch(19% 0.09 142);
-  --c-nav-bg-open: oklch(19% 0.09 142);
+  /* Navigation — light */
+  --c-nav-bg:      oklch(98.5% 0.003 83);
+  --c-nav-bg-open: oklch(98.5% 0.003 83);
 
-  /* Error on dark surfaces */
-  --c-error-inv:          oklch(65% 0.17 25);
+  /* Error */
+  --c-error-inv: oklch(47% 0.19 25);
 
-  /* Green scale */
-  --c-green-950: oklch(19% 0.09  142);
-  --c-green-900: oklch(24% 0.11  142);
-  --c-green-700: oklch(33% 0.13  142);
-  --c-green-600: oklch(39% 0.13  142);
-  --c-green-400: oklch(55% 0.14  142);
-  --c-green-200: oklch(76% 0.11  142);
-  --c-green-100: oklch(90% 0.055 142);
-  --c-green-50:  oklch(96% 0.025 142);
+  /* Gray scale (token names kept for CSS compatibility) */
+  --c-green-950: oklch(8%  0 0);
+  --c-green-900: oklch(15% 0 0);
+  --c-green-700: oklch(32% 0 0);
+  --c-green-600: oklch(42% 0 0);
+  --c-green-400: oklch(58% 0 0);
+  --c-green-200: oklch(75% 0 0);
+  --c-green-100: oklch(88% 0 0);
+  --c-green-50:  oklch(95% 0 0);
 
   /* Semantic */
   --c-action:        var(--c-green-700);
-  --c-action-hover:  var(--c-green-600);
-  --c-on-action:     oklch(98% 0.010 90);
+  --c-action-hover:  oklch(8% 0 0);
+  --c-on-action:     oklch(98.5% 0.003 83);
   --c-focus:         oklch(53% 0.22  255);
   --c-error:         oklch(47% 0.19   25);
 
