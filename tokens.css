@@ -5,14 +5,14 @@
   /* Surface */
   --c-page:          oklch(98.5% 0.003 83);
   --c-subtle:        oklch(96%   0.004 83);
-  --c-elevated:      oklch(100%  0     0);
+  --c-elevated:      oklch(99.5% 0.002 83);
   --c-border:        oklch(88%   0.003 83);
   --c-border-strong: oklch(72%   0.003 83);
 
   /* Text — light surfaces */
   --c-text-1:  oklch(8%  0 0);
   --c-text-2:  oklch(38% 0 0);
-  --c-text-3:  oklch(55% 0 0);
+  --c-text-3:  oklch(48% 0 0);
   --c-text-ph: oklch(72% 0 0);
   --c-text-inv: oklch(8%  0 0);
 
@@ -32,7 +32,7 @@
   /* Error */
   --c-error-inv: oklch(47% 0.19 25);
 
-  /* Gray scale (token names kept for CSS compatibility) */
+  /* Gray scale — values are neutral grays; "green" names are legacy and kept for CSS compatibility */
   --c-green-950: oklch(8%  0 0);
   --c-green-900: oklch(15% 0 0);
   --c-green-700: oklch(32% 0 0);
@@ -41,6 +41,9 @@
   --c-green-200: oklch(75% 0 0);
   --c-green-100: oklch(88% 0 0);
   --c-green-50:  oklch(95% 0 0);
+
+  /* Canvas sine waves — RGB triplet for use in rgba() */
+  --sine-rgb: 26, 26, 26;
 
   /* Semantic */
   --c-action:        var(--c-green-700);
@@ -66,4 +69,34 @@
   --touch:  44px;
   --nav-h:  64px;
   --ease:   cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surface */
+    --c-page:          oklch(12%   0.003 83);
+    --c-subtle:        oklch(16%   0.003 83);
+    --c-elevated:      oklch(19%   0.003 83);
+    --c-border:        oklch(26%   0.003 83);
+    --c-border-strong: oklch(40%   0.003 83);
+
+    /* Text */
+    --c-text-1:  oklch(93% 0 0);
+    --c-text-2:  oklch(70% 0 0);
+    --c-text-3:  oklch(55% 0 0);
+    --c-text-ph: oklch(38% 0 0);
+    --c-text-inv: oklch(93% 0 0);
+
+    /* Navigation */
+    --c-nav-bg:      oklch(12% 0.003 83);
+    --c-nav-bg-open: oklch(14% 0.003 83);
+
+    /* Action */
+    --c-action:       oklch(72% 0 0);
+    --c-action-hover: oklch(88% 0 0);
+    --c-on-action:    oklch(12% 0 0);
+
+    /* Sine canvas */
+    --sine-rgb: 230, 225, 220;
+  }
 }

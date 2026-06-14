@@ -6,7 +6,8 @@
   <title>José Maria Barros — UX & Product Designer</title>
   <meta name="description" content="Principal UX & Product Designer especializado em design systems escaláveis e produto digital. Lisboa, Portugal." />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <meta name="theme-color" content="#faf9f7" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#1e1b18" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://josemariabarros.com/" />
   <meta property="og:title" content="José Maria Barros — UX & Product Designer" />
@@ -52,17 +53,19 @@
       <div class="hero">
         <div class="hero-content">
           <h1 class="hero-title" id="hero-title">
-            Interfaces que<br>
-            funcionam.<br>
+            Interfaces<br>
+            <span class="hero-title-light">que funcionam.</span><br>
             Design Systems<br>
-            que escalam.
+            <span class="hero-title-light">que escalam.</span>
           </h1>
-          <p class="hero-desc">Trabalho com equipas que precisam de organizar o design, melhorar a experiência ou preparar o produto para escalar. UX, Design Systems e IA aplicada.</p>
         </div>
         <div class="hero-portrait" aria-hidden="true">
           <img src="assets/images/jose-maria-barros.png" alt="" width="420" height="560" loading="eager" decoding="async" class="hero-portrait-img">
         </div>
-        <p class="hero-scroll" aria-hidden="true">scroll para explorar<br><span>↓</span></p>
+        <div class="hero-bottom">
+          <p class="hero-desc">Trabalho com equipas que precisam de organizar o design, melhorar a experiência ou preparar o produto para escalar. UX, Design Systems e IA aplicada.</p>
+          <p class="hero-scroll" aria-hidden="true">scroll para explorar<br><span>↓</span></p>
+        </div>
       </div>
     </section>
 
@@ -262,13 +265,14 @@
     <!-- PROCESS -->
     <section class="process" id="processo" aria-labelledby="processo-title">
       <div class="process-inner">
-        <p class="section-crumb reveal"><span class="crumb-mono">02</span><span class="crumb-label">METODOLOGIA</span></p>
+        <h2 id="processo-title" class="sr-only">Processo</h2>
+        <p class="section-crumb reveal"><span class="crumb-mono">• 02</span><span class="crumb-sep" aria-hidden="true"> | </span><span class="crumb-label">METODOLOGIA</span></p>
         <div class="process-timeline reveal" role="list" aria-label="Fases do processo">
           <div class="process-rail" aria-hidden="true"></div>
           <div class="process-steps">
             <div class="process-step" role="listitem">
               <span class="step-num" aria-hidden="true">01</span>
-              <h3 class="step-title" id="processo-title">Descoberta</h3>
+              <h3 class="step-title">Descoberta</h3>
               <p class="step-desc">Entender o problema real antes de qualquer solução.</p>
             </div>
             <div class="process-step" role="listitem">
@@ -328,22 +332,22 @@
           <form class="contact-form" id="contact-form" action="https://formspree.io/f/xaqzevlq" method="POST" aria-label="Formulário de contacto" novalidate>
             <div class="form-group">
               <label class="form-label" for="name">Nome <span class="req" aria-label="obrigatório">*</span></label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="O teu nome" required autocomplete="name" aria-required="true" aria-describedby="name-hint name-error" />
+              <input type="text" id="name" name="name" class="form-input" placeholder="O teu nome" required autocomplete="name" aria-required="true" aria-describedby="name-hint name-error" maxlength="100" />
               <span class="form-hint" id="name-hint">Nome próprio e apelido</span>
               <span class="form-field-error" id="name-error" role="alert" aria-live="polite" hidden></span>
             </div>
             <div class="form-group">
               <label class="form-label" for="email">Email <span class="req" aria-label="obrigatório">*</span></label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required autocomplete="email" aria-required="true" inputmode="email" aria-describedby="email-error" />
+              <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required autocomplete="email" aria-required="true" inputmode="email" aria-describedby="email-error" maxlength="254" spellcheck="false" />
               <span class="form-field-error" id="email-error" role="alert" aria-live="polite" hidden></span>
             </div>
             <div class="form-group">
               <label class="form-label" for="subject">Assunto</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="Design System, Acessibilidade, IA..." autocomplete="off" />
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Design System, Acessibilidade, IA..." autocomplete="off" maxlength="150" />
             </div>
             <div class="form-group">
               <label class="form-label" for="message">Mensagem <span class="req" aria-label="obrigatório">*</span></label>
-              <textarea id="message" name="message" class="form-input" placeholder="Conta-me sobre o teu projecto..." required aria-required="true" rows="5" aria-describedby="message-error"></textarea>
+              <textarea id="message" name="message" class="form-input" placeholder="Conta-me sobre o teu projecto..." required aria-required="true" rows="5" aria-describedby="message-error" maxlength="3000"></textarea>
               <span class="form-field-error" id="message-error" role="alert" aria-live="polite" hidden></span>
             </div>
             <p class="form-hint"><span aria-hidden="true">*</span> Campos obrigatórios</p>
@@ -364,15 +368,17 @@
     </svg>
   </div>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="footer-inner">
       <p class="footer-copy">© 2026 José Maria Barros</p>
       <nav class="footer-social" aria-label="Perfis externos">
-        <a href="https://linkedin.com/in/josemariabarros" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://linkedin.com/in/josemariabarros" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (abre numa nova janela)</span></a>
       </nav>
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" defer></script>
+  <script src="sines.js" defer></script>
   <script src="script.js" defer></script>
 
 </body>
