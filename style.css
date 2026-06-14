@@ -487,14 +487,31 @@ textarea.form-input { resize: vertical; min-height: 130px; }
    FOOTER
    ===================== */
 footer {
-  background: var(--c-subtle);
+  background: var(--c-page);
   border-top: 1px solid var(--c-border);
-  color: var(--c-text-3);
-  padding: var(--sp-8); text-align: center;
-  font-size: 0.8125rem; font-weight: 300;
+  padding: var(--sp-6) var(--sp-8);
 }
-footer a { color: var(--c-action); text-decoration: none; display: inline-block; padding-block: 5px; }
-footer a:hover { text-decoration: underline; }
+.footer-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-4);
+}
+.footer-coords,
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem; font-weight: 400;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--c-text-3);
+}
+.footer-social { display: flex; gap: var(--sp-6); }
+.footer-social a {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--c-text-1); text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+.footer-social a:hover { color: var(--c-text-3); }
 
 /* =====================
    REVEAL
@@ -559,6 +576,7 @@ footer a:hover { text-decoration: underline; }
   .process-steps { grid-template-columns: 1fr; }
   .skills-list { grid-template-columns: 1fr; }
   footer { padding: var(--sp-6) var(--sp-4); }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
 }
 
 /* =====================
