@@ -12,7 +12,7 @@
   /* Text — light surfaces */
   --c-text-1:  oklch(8%  0 0);
   --c-text-2:  oklch(38% 0 0);
-  --c-text-3:  oklch(48% 0 0);
+  --c-text-3:  oklch(46% 0 0);
   --c-text-ph: oklch(72% 0 0);
   --c-text-inv: oklch(8%  0 0);
 
@@ -83,7 +83,7 @@
     /* Text */
     --c-text-1:  oklch(93% 0 0);
     --c-text-2:  oklch(70% 0 0);
-    --c-text-3:  oklch(55% 0 0);
+    --c-text-3:  oklch(63% 0 0);
     --c-text-ph: oklch(38% 0 0);
     --c-text-inv: oklch(93% 0 0);
 
@@ -95,6 +95,9 @@
     --c-action:       oklch(72% 0 0);
     --c-action-hover: oklch(88% 0 0);
     --c-on-action:    oklch(12% 0 0);
+
+    /* Error */
+    --c-error-inv: oklch(68% 0.19 25);
 
     /* Sine canvas */
     --sine-rgb: 230, 225, 220;
