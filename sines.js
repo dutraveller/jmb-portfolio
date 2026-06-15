@@ -11,6 +11,11 @@
   var sineRgb = (getComputedStyle(document.documentElement)
     .getPropertyValue('--sine-rgb').trim()) || '26,26,26';
 
+  /* In dark mode, low-opacity strokes on a dark surface are nearly invisible.
+     Boost opacity so all waves remain legible regardless of the surface colour. */
+  var isDark   = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var opScale  = isDark ? 2.5 : 1.0;
+
   /* Pause animation when tab is hidden to save CPU/battery */
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { gsap.ticker.sleep(); } else { gsap.ticker.wake(); }
@@ -99,7 +104,7 @@
         ctx.beginPath();
         ctx.setLineDash(w.dash);
         ctx.lineWidth     = w.lw;
-        ctx.strokeStyle   = 'rgba(' + sineRgb + ',' + w.op + ')';
+        ctx.strokeStyle   = 'rgba(' + sineRgb + ',' + Math.min(w.op * opScale, 1) + ')';
         ctx.lineCap       = 'round';
         ctx.lineJoin      = 'round';
         for (var x = 0; x <= W; x += 2) {
