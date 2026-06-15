@@ -409,6 +409,11 @@ body {
    ===================== */
 .process { background: var(--c-page); padding: var(--sp-12) var(--sp-8); }
 .process-inner { max-width: var(--max-w); margin: 0 auto; }
+.process-desc {
+  font-size: 0.9375rem; font-weight: 300;
+  line-height: 1.6; color: var(--c-text-2);
+  max-width: 52ch;
+}
 .process-rail { display: none; }
 .process-timeline { margin-top: var(--sp-12); }
 .process-steps {
