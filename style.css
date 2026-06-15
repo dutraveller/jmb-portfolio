@@ -130,7 +130,7 @@ body {
 }
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 8.5vw, 9rem);
+  font-size: clamp(3rem, 8.5vw, 9rem);
   font-weight: 400;
   text-transform: uppercase;
   line-height: 0.88;
