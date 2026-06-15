@@ -526,6 +526,7 @@ footer {
 }
 .footer-social { display: flex; gap: var(--sp-6); }
 .footer-social a {
+  display: inline-flex; align-items: center; min-height: 24px;
   font-family: var(--font-sans);
   font-size: 0.875rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;

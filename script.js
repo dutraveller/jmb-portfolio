@@ -135,7 +135,12 @@ if (form) {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       const link = anchorMap[e.target.id];
-      if (link) link.classList.toggle('active', e.isIntersecting);
+      if (link) {
+        link.classList.toggle('active', e.isIntersecting);
+        e.isIntersecting
+          ? link.setAttribute('aria-current', 'true')
+          : link.removeAttribute('aria-current');
+      }
     });
   }, { rootMargin: '-20% 0px -65% 0px' });
   sections.forEach(s => obs.observe(s));
