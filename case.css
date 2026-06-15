@@ -4,17 +4,18 @@
 
 /* ---- Header ---- */
 .case-header {
-  background: var(--c-green-950);
+  background: var(--c-page);
   padding: calc(var(--nav-h) + var(--sp-16)) var(--sp-8) var(--sp-20);
+  border-bottom: 1px solid var(--c-border);
 }
 .case-header-inner { max-width: 860px; margin: 0 auto; }
 
 .case-back {
   display: inline-flex; align-items: center; gap: var(--sp-2);
   min-height: var(--touch);
-  font-size: 0.6875rem; font-weight: 500;
+  font-size: 0.875rem; font-weight: 500;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--c-text-inv-3); text-decoration: none;
+  color: var(--c-text-3); text-decoration: none;
   margin-bottom: var(--sp-10);
   transition: color 0.2s var(--ease);
   opacity: 0;
@@ -23,17 +24,19 @@
 .case-back:hover { color: var(--c-text-inv); }
 
 .case-industry {
-  font-size: 0.6875rem; font-weight: 500;
+  font-size: 0.875rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--c-green-200); margin-bottom: var(--sp-3);
+  color: var(--c-text-3); margin-bottom: var(--sp-3);
   opacity: 0;
   animation: slideUp 0.7s var(--ease) 0.2s forwards;
 }
 
 .case-title {
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 8vw, 7rem);
-  font-weight: 800; line-height: 0.93;
-  letter-spacing: -0.03em; color: var(--c-text-inv);
+  font-weight: 400; line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -0.01em; color: var(--c-text-1);
   margin-bottom: var(--sp-8);
   text-wrap: balance;
   opacity: 0;
@@ -46,17 +49,18 @@
   animation: slideUp 0.7s var(--ease) 0.5s forwards;
 }
 .case-chip {
-  font-size: 0.6875rem; font-weight: 500;
+  font-size: 0.875rem; font-weight: 500;
   letter-spacing: 0.06em;
   padding: var(--sp-2) var(--sp-4); border-radius: 2px;
-  border: 1px solid var(--c-border-inv);
-  color: var(--c-text-inv-2);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-3);
 }
 
 /* ---- Sections ---- */
-.case-section { padding: var(--sp-20) var(--sp-8); background: var(--c-subtle); }
+article { counter-reset: cs -1; }
+.case-section { padding: var(--sp-20) var(--sp-8); background: var(--c-page); counter-increment: cs; }
 .case-section--light { background: var(--c-page); }
-.case-section--dark  { background: var(--c-green-900); }
+.case-section--dark  { background: var(--c-page); }
 
 /* ---- Body grid: label | content ---- */
 .case-body {
@@ -68,7 +72,20 @@
 }
 .case-lead { padding-top: 0.15em; }
 .case-lead .section-label { line-height: 1.5; }
-.case-section--dark .section-label { color: var(--c-green-200); }
+.case-section--dark .section-label { color: var(--c-action); }
+
+/* Numbered section crumbs via CSS counters — renders "• 00" above the label text */
+.section-label::before {
+  content: '• ' counter(cs, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: var(--sp-2);
+}
 
 /* ---- Content typography ---- */
 .case-content p {
@@ -86,9 +103,9 @@
   text-wrap: pretty;
 }
 
-/* On dark sections */
-.case-section--dark .case-content p { color: var(--c-text-inv-2); }
-.case-section--dark .case-content p strong { color: var(--c-text-inv); }
+/* case-section--dark is now subtle, inherits standard text colors */
+.case-section--dark .case-content p { color: var(--c-text-2); }
+.case-section--dark .case-content p strong { color: var(--c-text-1); }
 
 /* ---- General list (role, demonstrates) ---- */
 .case-list { list-style: none; padding: 0; }
@@ -117,7 +134,7 @@
 }
 .case-problems-list li:first-child { border-top: 1px solid var(--c-border); }
 .problem-n {
-  font-size: 0.6875rem; font-weight: 500;
+  font-size: 0.875rem; font-weight: 500;
   letter-spacing: 0.08em; color: var(--c-text-3);
 }
 .case-problems-list li p {
@@ -132,15 +149,15 @@
   color: var(--c-text-2); margin-top: var(--sp-2);
 }
 
-/* ---- Results list (dark bg) ---- */
+/* ---- Results list ---- */
 .case-results-list { list-style: none; padding: 0; }
 .case-results-list li {
   font-size: 1.0625rem; font-weight: 300;
-  line-height: 1.7; color: var(--c-text-inv-2);
+  line-height: 1.7; color: var(--c-text-2);
   padding: var(--sp-4) 0;
-  border-bottom: 1px solid var(--c-border-inv);
+  border-bottom: 1px solid var(--c-border);
 }
-.case-results-list li:first-child { border-top: 1px solid var(--c-border-inv); }
+.case-results-list li:first-child { border-top: 1px solid var(--c-border); }
 
 /* ---- Image placeholder ---- */
 .case-image-wrap {
@@ -173,7 +190,7 @@
   text-decoration: none;
 }
 .case-nav-label {
-  font-size: 0.6875rem; font-weight: 500;
+  font-size: 0.875rem; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--c-text-3);
 }
@@ -227,7 +244,7 @@
   border: 1px solid var(--c-border);
 }
 .case-figure figcaption {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--c-text-3);
   line-height: 1.5;
   text-wrap: pretty;
@@ -250,7 +267,7 @@
 }
 .case-mini-break-inner { max-width: 860px; margin: 0 auto; }
 .case-mini-label {
-  font-size: 0.6875rem; font-weight: 500;
+  font-size: 0.875rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--c-text-3); margin-bottom: var(--sp-4);
 }
@@ -290,7 +307,7 @@
 .case-progress {
   position: fixed; top: var(--nav-h); left: 0;
   width: 100%; height: 2px; z-index: 99;
-  background: var(--c-green-200);
+  background: var(--c-action);
   transform: scaleX(0); transform-origin: left center;
   pointer-events: none;
 }
@@ -398,7 +415,7 @@
   box-shadow: 0 24px 80px oklch(0% 0 0 / 0.5);
 }
 .img-modal-caption {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: oklch(88% 0 0 / 0.7);
   text-align: center;
   line-height: 1.5;

@@ -8,6 +8,10 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+document.querySelectorAll('.work-thumb img').forEach(img => {
+  img.addEventListener('error', () => { img.style.visibility = 'hidden'; });
+});
+
 const burger = document.querySelector('.nav-burger');
 const navLinks = document.getElementById('nav-links');
 const iconMenu = '<rect width="20" height="2" fill="currentColor"/><rect y="6" width="20" height="2" fill="currentColor"/><rect y="12" width="20" height="2" fill="currentColor"/>';
@@ -59,7 +63,9 @@ if (form) {
     // Validação
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
-      if (!field.value.trim()) { setFieldError(field, true); valid = false; }
+      const empty = !field.value.trim();
+      const emailBad = field.type === 'email' && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+      if (empty || emailBad) { setFieldError(field, true); valid = false; }
       else { setFieldError(field, false); }
     });
     if (!valid) {
@@ -129,7 +135,12 @@ if (form) {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       const link = anchorMap[e.target.id];
-      if (link) link.classList.toggle('active', e.isIntersecting);
+      if (link) {
+        link.classList.toggle('active', e.isIntersecting);
+        e.isIntersecting
+          ? link.setAttribute('aria-current', 'true')
+          : link.removeAttribute('aria-current');
+      }
     });
   }, { rootMargin: '-20% 0px -65% 0px' });
   sections.forEach(s => obs.observe(s));
