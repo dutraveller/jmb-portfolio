@@ -236,17 +236,24 @@ body {
    ===================== */
 .about {
   background-color: var(--c-page);
-  padding: var(--sp-32) var(--sp-8);
+  padding: var(--sp-32) var(--sp-8) var(--sp-20);
 }
 .about-inner {
   max-width: var(--max-w); margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  column-gap: var(--sp-16);
+  align-items: start;
 }
+.about-inner > .section-crumb { grid-column: 1 / -1; }
+.about-inner > .about-title { grid-column: 1; }
+.about-inner > .about-text { grid-column: 2; }
 .about-title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5.5vw, 5.5rem);
   font-weight: 400; text-transform: uppercase;
   line-height: 0.9; letter-spacing: -0.01em;
-  color: var(--c-text-1); margin-bottom: var(--sp-16);
+  color: var(--c-text-1); margin-bottom: 0;
 }
 .about-text p {
   font-size: 1.0625rem; font-weight: 400;
@@ -326,7 +333,7 @@ body {
 /* =====================
    WORK
    ===================== */
-.work { background: var(--c-page); padding: var(--sp-32) var(--sp-8); }
+.work { background: var(--c-page); padding: var(--sp-20) var(--sp-8) var(--sp-32); }
 .work-inner { max-width: var(--max-w); margin: 0 auto; }
 .work-title {
   font-family: var(--font-display);
@@ -400,7 +407,7 @@ body {
 /* =====================
    PROCESS
    ===================== */
-.process { background: var(--c-page); padding: var(--sp-24) var(--sp-8); }
+.process { background: var(--c-page); padding: var(--sp-12) var(--sp-8); }
 .process-inner { max-width: var(--max-w); margin: 0 auto; }
 .process-rail { display: none; }
 .process-timeline { margin-top: var(--sp-12); }
@@ -434,7 +441,7 @@ body {
 /* =====================
    CONTACT
    ===================== */
-.contact { background: var(--c-page); padding: var(--sp-32) var(--sp-8); }
+.contact { background: var(--c-page); padding: var(--sp-24) var(--sp-8) var(--sp-32); }
 .contact .form-success {
   max-width: var(--max-w); margin: 0 auto;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
@@ -577,7 +584,16 @@ footer {
   .hero-content { grid-row: 2; grid-column: 1; }
   .hero-bottom { grid-row: 3; grid-column: 1; flex-direction: column; gap: var(--sp-6); align-items: flex-start; }
   .hero-scroll { text-align: left; }
-  .about, .services, .work, .process, .contact { padding-top: var(--sp-24); padding-bottom: var(--sp-24); }
+  .about-inner { grid-template-columns: 1fr; column-gap: 0; }
+  .about-inner > .section-crumb,
+  .about-inner > .about-title,
+  .about-inner > .about-text { grid-column: 1; }
+  .about-inner > .about-title { margin-bottom: var(--sp-8); }
+  .about { padding-top: var(--sp-24); padding-bottom: var(--sp-16); }
+  .services { padding-top: var(--sp-24); padding-bottom: var(--sp-24); }
+  .work { padding-top: var(--sp-12); padding-bottom: var(--sp-24); }
+  .process { padding-top: var(--sp-8); padding-bottom: var(--sp-10); }
+  .contact { padding-top: var(--sp-20); padding-bottom: var(--sp-24); }
 }
 
 /* =====================
