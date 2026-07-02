@@ -1,21 +1,21 @@
-﻿<!DOCTYPE html>
-<html lang="pt-PT">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auditoria de Acessibilidade WCAG 2.2 — José Maria Barros</title>
-  <meta name="description" content="Auditoria de acessibilidade a sistemas digitais complexos, com identificação de barreiras críticas e plano de remediação WCAG 2.2 / EAA 2025." />
+  <title>WCAG 2.2 Accessibility Audit — José Maria Barros</title>
+  <meta name="description" content="Accessibility audit of complex digital systems (web and mobile) to identify real barriers and reduce legal, technical, and operational risk under WCAG 2.2 and EAA 2025." />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#1e1b18" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://josemariabarros.com/caso-acessibilidade.html" />
-  <meta property="og:title" content="Auditoria de Acessibilidade WCAG 2.2 — José Maria Barros" />
-  <meta property="og:description" content="Auditoria de acessibilidade a sistemas digitais complexos, com identificação de barreiras críticas e plano de remediação WCAG 2.2 / EAA 2025." />
+  <meta property="og:title" content="WCAG 2.2 Accessibility Audit — José Maria Barros" />
+  <meta property="og:description" content="Accessibility audit of complex digital systems (web and mobile) to identify real barriers and reduce legal, technical, and operational risk under WCAG 2.2 and EAA 2025." />
   <meta property="og:image" content="https://josemariabarros.com/assets/images/a11y-web-issues.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Auditoria de Acessibilidade WCAG 2.2 — José Maria Barros" />
-  <meta name="twitter:description" content="Auditoria de acessibilidade a sistemas digitais complexos, com identificação de barreiras críticas e plano de remediação WCAG 2.2 / EAA 2025." />
+  <meta name="twitter:title" content="WCAG 2.2 Accessibility Audit — José Maria Barros" />
+  <meta name="twitter:description" content="Accessibility audit of complex digital systems (web and mobile) to identify real barriers and reduce legal, technical, and operational risk under WCAG 2.2 and EAA 2025." />
   <meta name="twitter:image" content="https://josemariabarros.com/assets/images/a11y-web-issues.png" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,19 +27,19 @@
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <nav class="nav" aria-label="Navegação principal">
-    <a href="index.html" class="nav-logo" aria-label="José Maria Barros — início">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="José Maria Barros — home">
       José Maria Barros<span class="nav-logo-dot" aria-hidden="true">.</span>
     </a>
     <ul class="nav-links" id="nav-links" role="list">
-      <li><a href="index.html#trabalho">Trabalho</a></li>
-      <li><a href="index.html#processo">Processo</a></li>
-      <li><a href="index.html#sobre">Sobre</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
+      <li><a href="index.html#trabalho">Work</a></li>
+      <li><a href="index.html#processo">Process</a></li>
+      <li><a href="index.html#sobre">About</a></li>
+      <li><a href="index.html#contacto">Contact</a></li>
     </ul>
-    <button class="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+    <button class="nav-burger" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
         <rect width="20" height="2" fill="currentColor"/>
         <rect y="6" width="20" height="2" fill="currentColor"/>
@@ -56,11 +56,11 @@
       <header class="case-header">
         <div class="case-header-inner">
           <a href="index.html#trabalho" class="case-back">
-            <span aria-hidden="true">←</span> Casos de estudo
+            <span aria-hidden="true">←</span> Selected work
           </a>
-          <p class="case-industry">Governo / Setor Público</p>
-          <h1 class="case-title">Auditoria de<br>Acessibilidade WCAG&nbsp;2.2</h1>
-          <div class="case-chips" aria-label="Informação do projeto">
+          <p class="case-industry">Government / Public Sector</p>
+          <h1 class="case-title">WCAG&nbsp;2.2<br>Accessibility Audit</h1>
+          <div class="case-chips" aria-label="Project information">
             <span class="case-chip">WCAG 2.2 AA</span>
             <span class="case-chip">EAA 2025</span>
             <span class="case-chip">Web + Mobile</span>
@@ -77,19 +77,20 @@
         </svg>
       </div>
 
-      <!-- CONTEXTO -->
-      <section class="case-section" aria-labelledby="ctx-title">
+      <!-- CHALLENGE -->
+      <section class="case-section" aria-labelledby="challenge-title">
         <div class="case-body reveal">
           <div class="case-lead">
-            <h2 class="section-label" id="ctx-title">Contexto</h2>
+            <h2 class="section-label" id="challenge-title">Challenge</h2>
           </div>
           <div class="case-content">
-            <p class="case-intro">Auditoria de acessibilidade a sistemas digitais complexos (web e mobile), com o objetivo de identificar barreiras reais para utilizadores e <strong>reduzir risco legal, técnico e operacional</strong>.</p>
+            <p class="case-intro">A public-sector organisation needed a rigorous audit of complex digital systems — web and mobile — to identify real barriers for users and <strong>reduce legal, technical, and operational risk</strong> ahead of EAA 2025 compliance deadlines.</p>
+            <p>The systems had never been formally assessed for accessibility. Without a structured audit, the organisation had no way to prioritise fixes, estimate remediation effort, or demonstrate conformance to regulators.</p>
           </div>
         </div>
       </section>
 
-      <!-- IMAGENS DO PROJECTO -->
+      <!-- IMAGES -->
       <div class="case-image-wrap reveal">
         <div class="case-image-pair">
           <figure class="case-figure">
@@ -97,135 +98,125 @@
               <source srcset="assets/images/a11y-web-issues-800.webp 800w, assets/images/a11y-web-issues.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
               <img
               src="assets/images/a11y-web-issues.png"
-              alt="Interface web do sistema auditado: card de incidente com etiqueta de estado assinalada a vermelho, evidenciando dependência de cor e ausência de relação semântica entre labels e valores"
+              alt="Audited web interface: incident card with a status label flagged in red, showing colour-only state communication and missing semantic relationships between labels and values"
               width="640"
               height="480"
               loading="lazy"
               decoding="async"
             />
             </picture>
-            <figcaption>Dependência de cor e labels sem relação semântica — interface web</figcaption>
+            <figcaption>Colour-only state and labels without semantic relationships — web interface</figcaption>
           </figure>
           <figure class="case-figure">
             <picture>
               <source srcset="assets/images/a11y-mobile-screens-800.webp 800w, assets/images/a11y-mobile-screens.webp 1600w" type="image/webp" sizes="(max-width: 900px) 800px, 1600px">
               <img
               src="assets/images/a11y-mobile-screens.png"
-              alt="Dois ecrãs da aplicação mobile: detalhe de pedido com campos sobrepostos e ecrã inicial com estrutura de navegação — evidenciando ausência de hierarquia semântica e componentes sem nome acessível"
+              alt="Two mobile app screens: request detail view with overlapping fields and a home screen with navigation structure — revealing absent semantic hierarchy and interactive components without accessible names"
               width="640"
               height="480"
               loading="lazy"
               decoding="async"
             />
             </picture>
-            <figcaption>Ausência de hierarquia semântica e componentes sem nome acessível — app mobile</figcaption>
+            <figcaption>Missing semantic hierarchy and inaccessible interactive components — mobile app</figcaption>
           </figure>
         </div>
       </div>
 
-      <!-- O MEU PAPEL -->
+      <!-- MY ROLE -->
       <section class="case-section case-section--light" aria-labelledby="role-title">
         <div class="case-body reveal">
           <div class="case-lead">
-            <h2 class="section-label" id="role-title">O meu papel</h2>
+            <h2 class="section-label" id="role-title">My Role</h2>
           </div>
           <div class="case-content">
-            <ul class="case-list" aria-label="Responsabilidades">
-              <li>Auditoria WCAG (nível AA)</li>
-              <li>Análise manual e heurística</li>
-              <li>Identificação e priorização de issues</li>
-              <li>Recomendações acionáveis para design e desenvolvimento</li>
+            <ul class="case-list" aria-label="Responsibilities">
+              <li>WCAG 2.2 audit at Level AA across web and mobile surfaces</li>
+              <li>Manual and heuristic analysis of critical user flows</li>
+              <li>Keyboard navigation and screen reader testing (VoiceOver)</li>
+              <li>Issue identification and severity classification</li>
+              <li>Prioritisation by user impact and remediation effort</li>
+              <li>Actionable recommendations for design and development teams</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- PRINCIPAIS PROBLEMAS -->
-      <section class="case-section" aria-labelledby="problems-title">
+      <!-- DISCOVERY & RESEARCH -->
+      <section class="case-section" aria-labelledby="discovery-title">
         <div class="case-body reveal">
           <div class="case-lead">
-            <h2 class="section-label" id="problems-title">Principais problemas<br>identificados</h2>
+            <h2 class="section-label" id="discovery-title">Discovery &amp;<br>Research</h2>
           </div>
           <div class="case-content">
-            <ol class="case-problems-list" aria-label="Problemas de acessibilidade identificados">
+            <p>Systematic analysis of the full systems revealed four categories of systemic failure recurring across both platforms:</p>
+            <ol class="case-problems-list" aria-label="Systemic accessibility failures identified">
               <li>
                 <span class="problem-n" aria-hidden="true">01</span>
-                <p>Dependência excessiva de cor para transmitir estado</p>
+                <p><strong>Colour reliance.</strong> State, severity, and status communicated through colour alone, with no text or icon alternatives, failing users who are colour blind or using high-contrast modes.</p>
               </li>
               <li>
                 <span class="problem-n" aria-hidden="true">02</span>
-                <p>Falta de relações semânticas entre labels e conteúdos</p>
+                <p><strong>Missing semantic relationships.</strong> Labels and their corresponding values were visually paired but had no programmatic association, making screen readers announce content out of context.</p>
               </li>
               <li>
                 <span class="problem-n" aria-hidden="true">03</span>
-                <p>Estados de foco inconsistentes ou inexistentes</p>
+                <p><strong>Inconsistent focus states.</strong> Keyboard focus indicators were absent or suppressed on the majority of interactive elements, blocking keyboard-only and switch access users entirely.</p>
               </li>
               <li>
                 <span class="problem-n" aria-hidden="true">04</span>
-                <p>Componentes interativos sem nome, role ou valor acessível</p>
+                <p><strong>Inaccessible interactive components.</strong> Custom controls — filters, status toggles, expandable rows — had no accessible name, role, or value, making them invisible to assistive technologies.</p>
               </li>
             </ol>
           </div>
         </div>
       </section>
 
-      <!-- ABORDAGEM -->
-      <section class="case-section case-section--light" aria-labelledby="approach-title">
+      <!-- DESIGN DECISIONS -->
+      <section class="case-section case-section--light" aria-labelledby="decisions-title">
         <div class="case-body reveal">
           <div class="case-lead">
-            <h2 class="section-label" id="approach-title">Abordagem</h2>
+            <h2 class="section-label" id="decisions-title">Design<br>Decisions</h2>
           </div>
           <div class="case-content">
-            <p>A auditoria focou-se em:</p>
-            <ul class="case-list case-list--compact" aria-label="Áreas de foco da auditoria">
-              <li>Fluxos críticos</li>
-              <li>Estados e feedback do sistema</li>
-              <li>Navegação por teclado</li>
-              <li>Leitura com VoiceOver</li>
+            <p>The audit was structured around critical flows rather than page-by-page coverage — the areas where an accessibility failure would have the highest real-world consequence.</p>
+            <p>Testing covered:</p>
+            <ul class="case-list case-list--compact" aria-label="Audit focus areas">
+              <li>Critical flows: login, task creation, filtering, status management</li>
+              <li>System states and feedback: loading, empty, error, success</li>
+              <li>Keyboard navigation: tab order, focus traps, skip links</li>
+              <li>Screen reader pass with VoiceOver: announcements, landmarks, form labels</li>
             </ul>
-            <p>Cada problema foi documentado com:</p>
-            <ul class="case-list case-list--compact" aria-label="Componentes de cada issue documentado">
-              <li>Evidência</li>
-              <li>Critério WCAG</li>
-              <li>Impacto no utilizador</li>
-              <li>Recomendação clara de correção para design e desenvolvimento</li>
-            </ul>
+            <p>Each issue was documented with four components designed to make remediation actionable: evidence (screenshot or recording), the specific WCAG 2.2 criterion, the real user impact, and a concrete recommendation written for both designers and developers.</p>
+            <p>Issues were classified by severity — critical (blocks access), major (significantly degrades experience), and minor (reduces quality) — and ordered into a prioritised remediation roadmap.</p>
           </div>
         </div>
       </section>
 
-      <!-- RESULTADO -->
-      <section class="case-section case-section--dark" aria-labelledby="result-title">
+      <!-- OUTCOME & IMPACT -->
+      <section class="case-section case-section--dark" aria-labelledby="outcome-title">
         <div class="case-body reveal">
           <div class="case-lead">
-            <h2 class="section-label" id="result-title">Resultado</h2>
+            <h2 class="section-label" id="outcome-title">Outcome &amp;<br>Impact</h2>
           </div>
           <div class="case-content">
-            <p>Identificação e documentação de +400 issues WCAG em sistemas web e mobile, com priorização por severidade e impacto. Entregue plano de remediação accionável para as equipas de desenvolvimento, com redução directa do risco de incumprimento legal EAA 2025.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- O QUE ESTE PROJETO DEMONSTRA -->
-      <section class="case-section" aria-labelledby="demonstrates-title">
-        <div class="case-body reveal">
-          <div class="case-lead">
-            <h2 class="section-label" id="demonstrates-title">O que este<br>projeto demonstra</h2>
-          </div>
-          <div class="case-content">
-            <ul class="case-list" aria-label="Competências demonstradas">
-              <li>Auditoria manual estruturada com navegação por teclado, revisão de alt-text e leitura de ecrã, complementada por análise heurística e ferramentas automáticas.</li>
-              <li>Diagnóstico em sistemas complexos web e mobile com múltiplos fluxos e estados.</li>
-              <li>Documentação orientada a remediação: cada issue com evidência, critério WCAG, impacto real e recomendação para design e desenvolvimento.</li>
+            <ul class="case-results-list" aria-label="Results and impact">
+              <li>400+ WCAG 2.2 issues identified and documented across web and mobile systems</li>
+              <li>All issues prioritised by severity and real user impact, not just technical category</li>
+              <li>Remediation roadmap delivered to development teams — actionable without further interpretation</li>
+              <li>Direct reduction of EAA 2025 legal non-compliance risk</li>
+              <li>Audit methodology applied structured manual testing complemented by heuristic analysis, covering what automated tools miss</li>
+              <li>Each documented issue demonstrates the ability to diagnose complex systems, reason about user impact, and communicate clearly across design and engineering</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <nav class="case-nav" aria-label="Ver todos os casos de estudo">
+      <nav class="case-nav" aria-label="Case study navigation">
         <a href="index.html#trabalho" class="case-nav-link">
-          <span class="case-nav-label">Ver todos os casos</span>
-          <span class="case-nav-title">← Trabalho seleccionado</span>
+          <span class="case-nav-label">Selected work</span>
+          <span class="case-nav-title">← Selected work</span>
         </a>
       </nav>
 
@@ -244,8 +235,8 @@
   <footer>
     <div class="footer-inner">
       <p class="footer-copy">© 2026 José Maria Barros</p>
-      <nav class="footer-social" aria-label="Perfis externos">
-        <a href="https://linkedin.com/in/josemariabarros" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (abre numa nova janela)</span></a>
+      <nav class="footer-social" aria-label="External profiles">
+        <a href="https://linkedin.com/in/josemariabarros" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
       </nav>
     </div>
   </footer>
