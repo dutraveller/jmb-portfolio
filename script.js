@@ -14,8 +14,8 @@ document.querySelectorAll('.work-thumb img').forEach(img => {
 
 const burger = document.querySelector('.nav-burger');
 const navLinks = document.getElementById('nav-links');
-const iconMenu = '<rect width="20" height="2" fill="currentColor"/><rect y="6" width="20" height="2" fill="currentColor"/><rect y="12" width="20" height="2" fill="currentColor"/>';
-const iconClose = '<line x1="2" y1="1" x2="18" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="1" x2="2" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+const iconMenu = '<path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/>';
+const iconClose = '<path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/>';
 function setMenuState(open) {
   navLinks.classList.toggle('open', open);
   burger.setAttribute('aria-expanded', String(open));
