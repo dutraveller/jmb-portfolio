@@ -19,7 +19,7 @@ const iconClose = '<line x1="2" y1="1" x2="18" y2="13" stroke="currentColor" str
 function setMenuState(open) {
   navLinks.classList.toggle('open', open);
   burger.setAttribute('aria-expanded', String(open));
-  burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   burger.querySelector('svg').innerHTML = open ? iconClose : iconMenu;
 }
 burger.addEventListener('click', () => setMenuState(!navLinks.classList.contains('open')));
@@ -29,9 +29,9 @@ const form = document.getElementById('contact-form');
 if (form) {
   // Mensagens de erro por campo
   const fieldErrors = {
-    name:    { el: document.getElementById('name-error'),    msg: 'Por favor indica o teu nome.' },
-    email:   { el: document.getElementById('email-error'),   msg: 'Por favor indica um endereço de email válido.' },
-    message: { el: document.getElementById('message-error'), msg: 'Por favor escreve uma mensagem.' },
+    name:    { el: document.getElementById('name-error'),    msg: 'Please enter your name.' },
+    email:   { el: document.getElementById('email-error'),   msg: 'Please enter a valid email address.' },
+    message: { el: document.getElementById('message-error'), msg: 'Please write a message.' },
   };
   function setFieldError(field, hasError) {
     const entry = fieldErrors[field.id];
@@ -78,7 +78,7 @@ if (form) {
     const btn = form.querySelector('[type="submit"]');
     const originalText = btn.textContent;
     btn.disabled = true;
-    btn.textContent = 'A enviar…';
+    btn.textContent = 'Sending…';
 
     try {
       const res = await fetch(form.action, {
@@ -91,7 +91,7 @@ if (form) {
         const msg = document.createElement('p');
         msg.className = 'form-success';
         msg.setAttribute('role', 'status');
-        msg.textContent = 'Mensagem enviada. Responderei em breve.';
+        msg.textContent = "Message sent. I'll get back to you shortly.";
         const contactInner = form.closest('.contact-inner');
         if (contactInner) {
           contactInner.replaceWith(msg);
@@ -105,7 +105,7 @@ if (form) {
         const errMsg = form.querySelector('.form-error') || document.createElement('p');
         errMsg.className = 'form-error';
         errMsg.setAttribute('role', 'alert');
-        errMsg.textContent = 'Ocorreu um erro. Tenta novamente ou envia email directamente.';
+        errMsg.textContent = 'An error occurred. Please try again or email me directly.';
         if (!form.querySelector('.form-error')) form.appendChild(errMsg);
       }
     } catch {
@@ -114,7 +114,7 @@ if (form) {
       const errMsg = form.querySelector('.form-error') || document.createElement('p');
       errMsg.className = 'form-error';
       errMsg.setAttribute('role', 'alert');
-      errMsg.textContent = 'Sem ligação à internet. Tenta novamente ou envia email directamente.';
+      errMsg.textContent = 'No internet connection. Please try again or email me directly.';
       if (!form.querySelector('.form-error')) form.appendChild(errMsg);
     }
   });
@@ -227,7 +227,7 @@ if (form) {
   modal.innerHTML = `
     <div class="img-modal-backdrop"></div>
     <div class="img-modal-inner">
-      <button class="img-modal-close" aria-label="Fechar imagem ampliada">
+      <button class="img-modal-close" aria-label="Close expanded image">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <line x1="1" y1="1" x2="13" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <line x1="13" y1="1" x2="1" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -267,8 +267,8 @@ if (form) {
     const figure  = img.closest('.case-figure');
     const caption = figure?.querySelector('figcaption');
     const label   = caption
-      ? 'Ampliar: ' + caption.textContent.trim()
-      : 'Ampliar imagem';
+      ? 'Expand: ' + caption.textContent.trim()
+      : 'Expand image';
 
     const btn = document.createElement('button');
     btn.className = 'case-figure-btn';
@@ -308,7 +308,7 @@ if (form) {
 
 // Console easter egg
 console.log(
-  '%cJosé Maria Barros%c\nPrincipal UX & Product Designer · Lisboa, Portugal\n%c✦ Feito com atenção ao detalhe. josemariabarros@gmail.com',
+  '%cJosé Maria Barros%c\nPrincipal UX & Product Designer · Lisbon, Portugal\n%c✦ Built with attention to detail. josemariabarros@gmail.com',
   'color:#2d6a3f;font-size:1.25rem;font-weight:800;letter-spacing:-0.02em;',
   'color:#888;font-size:.875rem;font-weight:300;',
   'color:#aaa;font-size:.6875rem;'
