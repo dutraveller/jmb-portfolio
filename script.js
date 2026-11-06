@@ -88,10 +88,16 @@ if (form) {
       });
 
       if (res.ok) {
-        const msg = document.createElement('p');
-        msg.className = 'form-success';
+        const msg = document.createElement('div');
+        msg.className = 'form-success-wrap';
         msg.setAttribute('role', 'status');
-        msg.textContent = "Message sent. I'll get back to you shortly.";
+        msg.innerHTML = `
+          <svg class="form-success-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.25"/>
+            <path class="check-path" d="M7.5 12.5l3 3 6-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="form-success-title">Message sent.</p>
+          <p class="form-success-desc">I'll get back to you shortly.</p>`;
         const contactInner = form.closest('.contact-inner');
         if (contactInner) {
           contactInner.replaceWith(msg);

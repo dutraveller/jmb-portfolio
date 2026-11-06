@@ -698,3 +698,87 @@ footer {
   pointer-events: none;
 }
 .work-card:hover .work-thumb::after { opacity: 1; }
+
+/* Work card image: subtle zoom on hover */
+.work-thumb img {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.work-card:hover .work-thumb img { transform: scale(1.04); }
+
+/* Work card hint arrow: slides right on hover */
+.work-card-hint .ph {
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}
+.work-card:hover .work-card-hint .ph { transform: translateX(4px); }
+
+/* Hero scroll arrow: slow breathing nudge */
+@keyframes arrowBreathe {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(5px); }
+}
+.hero-scroll .ph {
+  display: inline-block;
+  animation: arrowBreathe 2.4s ease-in-out 2s infinite;
+}
+
+/* Contact link icons: lift on parent hover */
+.contact-link-icon .ph {
+  display: inline-block;
+  transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+}
+.contact-link:hover .contact-link-icon .ph {
+  transform: scale(1.2) translateY(-1px);
+  color: var(--c-text-1);
+}
+
+/* Skills list dots: scale + colour on item hover */
+.skills-list li::before {
+  transition: background-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.skills-list li:hover::before {
+  background: var(--c-text-1);
+  transform: scale(1.8);
+}
+
+/* Process step: subtle lift */
+.process-step {
+  transition: background 0.25s var(--ease);
+}
+.process-step:hover { background: var(--c-subtle); }
+
+/* Form success state */
+.form-success-wrap {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; flex-direction: column; gap: var(--sp-5);
+  animation: slideUp 0.65s var(--ease) forwards;
+}
+.form-success-icon {
+  color: var(--c-action);
+  display: block;
+  margin-bottom: var(--sp-3);
+}
+.form-success-icon circle {
+  stroke-dasharray: 69.1;
+  stroke-dashoffset: 69.1;
+  animation: drawCircle 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+.form-success-icon .check-path {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  animation: drawCheck 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+}
+@keyframes drawCircle { to { stroke-dashoffset: 0; } }
+@keyframes drawCheck  { to { stroke-dashoffset: 0; } }
+.form-success-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 400; line-height: 0.95;
+  text-transform: uppercase; letter-spacing: -0.01em;
+  color: var(--c-text-1);
+}
+.form-success-desc {
+  font-size: 1.0625rem; font-weight: 300;
+  line-height: 1.6; color: var(--c-text-2);
+  max-width: 46ch;
+}
